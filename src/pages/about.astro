@@ -1,7 +1,5 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import '../styles/global.css';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
 const pageTitle = "About Me";
 
@@ -18,36 +16,22 @@ const happy = true;
 const finished = false;
 const goal = 3;
 
-const skillColor = "navy";
+const skillColor = "blue";
 const fontWeight = "bold";
 const textCase = "uppercase";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-		<style define:vars={{skillColor, fontWeight, textCase}}>
-			h1 {
-			  color: purple;
-			  font-size: 4rem;
+<BaseLayout pageTitle={pageTitle}>
+
+	<style define:vars={{skillColor, fontWeight, textCase}}>
+		.skill {
+		  color: var(--skillColor);
+		  font-weight: var(--fontWeight);
+		  text-transform: var(--textCase);
 			}
-			.skill {
-			  color: var(--skillColor);
-			  font-weight: var(--fontWeight);
-			  text-transform: var(--textCase);
-			}
-		  </style>
-	</head>
+	</style>
 	
 	
-	<body>
-		<Header />
-		
-		<h1>{pageTitle}</h1>
         <h2>...going to try this again... but with a reason</h2>
         <p>will attempt to capture my self-instructions to run linux at home</p>
 		<br>
@@ -70,11 +54,5 @@ const textCase = "uppercase";
 		{finished && <p>I finished this tutorial!</p>}
 		{goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
 
-
-	    <Footer />
-				
-		<script>
-			import "../scripts/menu.js";
-	 	</script>
-	</body>
-</html>
+	
+</BaseLayout>
