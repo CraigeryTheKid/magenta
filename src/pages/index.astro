@@ -1,7 +1,9 @@
 ---
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
-const pageTitle = "Bonaccorsi Home";
+const pageTitle = 'Bonaccorsi Home';
 ---
 
 <html lang="en">
@@ -15,10 +17,10 @@ const pageTitle = "Bonaccorsi Home";
 	
 	
 	<body>
-		<a href="/">home</a>
-		<a href="/about/">about</a>
-		<a href="/blog/">blog</a>
+		<Navigation />
 		
 		<h1>{pageTitle}</h1>
+	
+	    <Footer />
 	</body>
 </html>
