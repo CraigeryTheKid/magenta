@@ -1,9 +1,12 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 const { frontmatter } = Astro.props;
+
+import CopyLayout from './CopyLayout.astro';
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
+<CopyLayout>
 
 <div class="tags">
     {frontmatter.tags.map((tag) => (
@@ -19,6 +22,8 @@ const { frontmatter } = Astro.props;
 
 
 <slot />
+
+</CopyLayout>
 </BaseLayout>
 
 <style>
