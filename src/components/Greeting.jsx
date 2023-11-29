@@ -1,3 +1,7 @@
+
+// Silly randomized button to change the text on mainpage
+// Used in main index.astro
+
 import { useState } from 'preact/hooks';
 
 export default function Greeting({messages}) {

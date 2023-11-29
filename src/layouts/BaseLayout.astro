@@ -1,4 +1,8 @@
 ---
+// master layout for all pages - adds header, footer, and pagetitle(from frontmatter)
+// also adds the tab info in browser
+// script at bottom makes hamburger clickable
+
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
@@ -7,6 +11,7 @@ const { pageTitle } = Astro.props;
 ---
 
 <html lang="en">
+
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -26,7 +31,11 @@ const { pageTitle } = Astro.props;
     <Footer />
     
     <script>
-      import "../scripts/menu.js";
+    document.querySelector('.hamburger').addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.toggle('expanded');   
+       });
     </script>
+  
   </body>
+
 </html>

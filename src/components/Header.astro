@@ -1,14 +1,27 @@
 ---
-import Hamburger from './Hamburger.astro';
-import Navigation from './Navigation.astro';
+// header makes the navigation links on top, AND, the dark/light button
+
 import ThemeIcon from './ThemeIcon.astro';
 ---
 
 
 <header>
   <nav>
-    <Hamburger />
+    
+    <div class="hamburger">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+    </div>
+    
     <ThemeIcon />
-    <Navigation />
+
+    <div class="nav-links">
+      <a href="/">home</a>
+      <a href="/about/">about</a>
+      <a href="/blog/">gnu/linux setup</a>
+      <a href="/tags/">tags</a>
+    </div>
+
   </nav>
 </header>

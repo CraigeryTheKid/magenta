@@ -1,4 +1,8 @@
 ---
+// index page for "all the tags" links
+// pulls unique tags form all blogs, then makes list of links to each
+// those links are created by the [tag].astro file
+
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const allPosts = await Astro.glob('../posts/*.md');

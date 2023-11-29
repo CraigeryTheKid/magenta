@@ -1,5 +1,6 @@
 ---
-import Social from './Social.astro';
+// makes the website/social links at the footer
+
 ---
 
 <style>
@@ -8,11 +9,19 @@ import Social from './Social.astro';
       gap: 1rem;
       margin-top: 2rem;
     }
+    a {
+      padding: 0.5rem 1rem;
+      color: white;
+      background-color: #4c1d95;
+      text-decoration: none;
+    }
 </style>
 
+
 <footer>
-  {/* <Social platform="twitter" username="astrodotbuild" /> */}
-    <Social platform="github" username="withastro" />
-    <Social platform="youtube" username="astrodotbuild" />
+
+  <a href= https://www.github.com/withastro > astro github </a>
+  <a href= https://www.youtube.com/astrodotbuild > astro youtube </a>
+
 </footer>
 

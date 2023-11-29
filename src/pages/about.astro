@@ -1,35 +1,24 @@
 ---
+// no special code here, except for turning list of values into bullet list
+
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const pageTitle = "About Me";
 
-const identity = {
-  firstName: "Craig",
-  country: "USA",
-  occupation: "Engineer",
-  hobbies: ["photography", "gaming", "kid-making"],
-};
-
 const skills = ["HTML", "CSS", "Excel", "Linux", "Astro", "Writing Docs"];
 
-const happy = true;
-const finished = true;
-const goal = 3;
 
-const skillColor = "blue";
-const fontWeight = "bold";
-const textCase = "uppercase";
 ---
+<style>
+	.skill {
+	  color: blue;
+	  font-weight: bold;
+	  text-transform: uppercase;
+		}
+</style>
+
 
 <BaseLayout pageTitle={pageTitle}>
-
-	<style define:vars={{skillColor, fontWeight, textCase}}>
-		.skill {
-		  color: var(--skillColor);
-		  font-weight: var(--fontWeight);
-		  text-transform: var(--textCase);
-			}
-	</style>
 	
 	
         <h2>...going to try this again... but with a reason</h2>
@@ -38,21 +27,19 @@ const textCase = "uppercase";
 
 		<p>Here are a few facts about me:</p>
 		<ul>
-  			<li>My name is {identity.firstName}.</li>
-  			<li>I live in {identity.country} and I work as a {identity.occupation}.</li>
-  			{identity.hobbies.length >= 2 &&
-    		<li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
-  			}
+  			<li>My name is Craig.</li>
+  			<li>I live in USA and I work as an Engineer.</li>
+  			<li>My hobbies are: "photography", "gaming", and "having so many kids"</li>
 		</ul>
 
 		<p>My skills are:</p>
-		<ul>
-  		{skills.map((skill) => <li class="skill">{skill}</li>)}
-		</ul>
+			<ul>
+  			{skills.map((skill) => <li class="skill">{skill}</li>)}
+			</ul>
 
-		{happy && <p>I am happy to be learning Astro!</p>}
-		{finished && <p>I finished this tutorial!</p>}
-		{goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+		<br>
+		<p>I finished this tutorial!</p>
+		
 
 	
 </BaseLayout>

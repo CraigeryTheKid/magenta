@@ -1,6 +1,8 @@
 ---
+// this crazy code makes dynamic sites for each "tag" and lists all the blogs that have it listed
+// pulls all blogs, lists unique tags, makes site for each tag, then makes links to all blogs with that tag
+
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import BlogPost from '../../components/BlogPost.astro';
 
 export async function getStaticPaths() {
     const allPosts = await Astro.glob('../posts/*.md');
@@ -28,9 +30,8 @@ const { posts } = Astro.props;
   <p>Posts tagged with "{tag}"</p>
   
     <ul>
-    {posts.map((post) => <BlogPost url={post.url} title={post.frontmatter.title}/>)}
+      {posts.map((post) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
     </ul>
-
 
 </BaseLayout>
 
