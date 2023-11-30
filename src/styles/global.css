@@ -81,7 +81,6 @@ html {
     .hamburger {
         display: none;
     }
-
   }
 
   html.dark {
@@ -93,6 +92,8 @@ html {
     color: #fff;
   }
 
+
+/* code block copy buttons */
 
   .copy-code {
     position: absolute;
@@ -108,5 +109,16 @@ html {
   .copy-code:hover {
     background-color: #312e81;
     color: red;
+  }
+
+
+/* main index kid button */
+  button {
+    width: 150px;
+    height: 34px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: white;
+    background-color: teal;
   }
   
