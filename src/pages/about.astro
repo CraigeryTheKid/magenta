@@ -1,11 +1,13 @@
 ---
 // no special code here, except for turning list of values into bullet list
 
+import type { Code } from 'astro:components';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const pageTitle = "About Me";
 
-const skills = ["HTML", "CSS", "Excel", "Linux", "Astro", "Writing Docs"];
+const skills = ["Copy-paste web coding", "Excel spreadsheets", "switching to Linux", "Changing Spark Plugs", "cutting hair for 5 of 6 family members",
+				"amazing spreadsheets", "building PCs", "home networking", "trimming trees", "spectacular spreadsheets"];
 
 
 ---
@@ -21,24 +23,27 @@ const skills = ["HTML", "CSS", "Excel", "Linux", "Astro", "Writing Docs"];
 <BaseLayout pageTitle={pageTitle}>
 	
 	
-        <h2>...going to try this again... but with a reason</h2>
-        <p>will attempt to capture my self-instructions to run linux at home</p>
+        <h2>...decided to make a website... for reasons.</h2>
+        <p>when videos games just don't cut it... start learning code?</p>
 		<br>
 
 		<p>Here are a few facts about me:</p>
 		<ul>
   			<li>My name is Craig.</li>
-  			<li>I live in USA and I work as an Engineer.</li>
-  			<li>My hobbies are: "photography", "gaming", and "having so many kids"</li>
+  			<li>I live in USA and am employed as an Engineer.</li>
+  			<li>My hobbies are: couch sitting, gaming, and having so many kids</li>
 		</ul>
-
-		<p>My skills are:</p>
+		<br>
+		<p>My random list of skills are:</p>
 			<ul>
   			{skills.map((skill) => <li class="skill">{skill}</li>)}
 			</ul>
 
 		<br>
-		<p>I finished this tutorial!</p>
+		<p><em><b>I finished this Astro tutorial!
+			<a href= https://docs.astro.build/en/tutorial/0-introduction/ > Build your first Astro Blog </a>
+			</em></b>
+		</p>
 		
 
 	
