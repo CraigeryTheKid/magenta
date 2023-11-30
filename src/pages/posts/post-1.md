@@ -2,12 +2,9 @@
 layout: ../../layouts/MDLayout.astro
 
 title: My First Blog Post
-author: Astro Learner
-description: This is the first post of my new Astro blog.
-image:
-    url: https://docs.astro.build/assets/full-logo-light.png
-    alt: The full Astro logo.
 pubDate: "2023-11-25"
+
+description: This is the first post of my new Astro blog.
 tags: ["astro", "blogging", "learning in public"]
 ---
 
@@ -28,10 +25,10 @@ Welcome to my _new blog_ about learning Astro! Here, I will share my learning jo
 I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
 
 
-```sh
+```sh .foobar
 sudo apt install && sudo apt upgrade -y
 ```
 
-```sh
+```sh .foobar
 cheese
 ```
