@@ -20,7 +20,7 @@ return (
     <div>
       <img src={kidpic} height="300"/>
       <h3>{greeting} is one of my children!!</h3>
-      <button  onClick={() => setGreeting(randomMessage())}>New Child</button>
+      <button class="kidbutt" onClick={() => setGreeting(randomMessage())}>New Child</button>
     </div>
   );
 }

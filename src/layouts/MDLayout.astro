@@ -30,15 +30,14 @@ import CopyLayout from './CopyLayout.astro';
     }
 </style>
 
+<p>Published on {frontmatter.pubDate}</p>
+
 <div class="tags">
     {frontmatter.tags.map((tag) => (
     <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
     ))}
 </div>
     
-<p>Published on {frontmatter.pubDate}</p>
-<p><em>{frontmatter.description}</em></p>
-
 <br>
 <slot />
 
