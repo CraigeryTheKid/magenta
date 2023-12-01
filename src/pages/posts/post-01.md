@@ -3,11 +3,8 @@ layout: ../../layouts/MDLayout.astro
 
 title: Leaving Windows
 pubDate: "2023-11-30"
-
-description: This is the first post of my new Astro blog.
 tags: ["distro", "linux", "ubuntu", "debian", "Pop!_OS"]
 ---
-
 
 
 ## Picking a Distro!
@@ -23,14 +20,14 @@ Nearly any of these would have worked eventually, but I focused on "out of the b
 
 5. **Kubuntu**: Ubuntu, but with KDE desktop. KDE felt better than Cinnamon, but not Pop!_OS
 6. **Zorin**: Another Ubuntu based. They have a paid version, and again just didn't grab me.
-7. **Anything ARCH based**: Not for beginners, ignore online saying otherwise.
-8. **Fedora based**: Didn't try, seems to have a strong following, but still not as "easy" or gaming-made.
-9. **SUSE based**: Same as Fedora. Didn't try, didn't seem beginner/gaming focused.
+7. **Fedora based**: Didn't try, seems to have a strong following, but still not as "easy" or gaming-made.
+8. **SUSE based**: Same as Fedora. Didn't try, didn't seem beginner/gaming focused.
+9. **Anything ARCH based**: Not for beginners, ignore online saying otherwise.
 
 <br>
 
 ## What's next
 
 Other than making sure my documents were backed up - nothing!<br>
-During distro-testing I confirmed the view apps I used worked in Linux just fine.
+During distro-testing I confirmed the fiew apps I used worked in Linux just fine.
 
