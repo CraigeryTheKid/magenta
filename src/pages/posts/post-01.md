@@ -3,7 +3,6 @@ layout: ../../layouts/MDLayout.astro
 
 title: Leaving Windows
 pubDate: "2023-11-30"
-tags: ["distro", "linux", "ubuntu", "debian", "Pop!_OS"]
 ---
 
 
