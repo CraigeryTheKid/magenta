@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/MDLayout.astro
 
-title: Full Disk Install
+title: 02 Full Disk Install
 pubDate: "2023-11-30"
 prev: post-01
 next: post-03

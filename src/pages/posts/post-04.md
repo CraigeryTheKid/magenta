@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/MDLayout.astro
 
-title: Network Share Folders (SAMBA!!)
+title: 04 Network Share Folders (SAMBA!!)
 pubDate: "2023-12-01"
 prev: post-03
 next: post-05
@@ -66,7 +66,7 @@ sudo mkdir /home/username/folder &&
 sudo apt install cifs-utils
 ```
 Open fstab, which controls mounting drives.<br>
-BE CAREFUL WITH EXISTING CONTENT
+BE CAREFUL WITH EXISTING CONTENT! Can break OS!
 ```sh
 sudo nano /etc/fstab
 ```

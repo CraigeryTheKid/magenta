@@ -7,6 +7,7 @@ import BaseLayout from './BaseLayout.astro';
 const { frontmatter } = Astro.props;
 
 import CopyLayout from './CopyLayout.astro';
+
 ---
 
 <style>
@@ -37,6 +38,7 @@ import CopyLayout from './CopyLayout.astro';
 <BaseLayout pageTitle={frontmatter.title}>
 <p>Published on {frontmatter.pubDate}</p>
 
+
 <div class="tags">
     <p class="tag"><a href='../blog'>Index</a></p>
     <p class="tag"><a href={frontmatter.prev}>Previous Page</a></p>
@@ -57,7 +59,6 @@ import CopyLayout from './CopyLayout.astro';
 </div>
 
 </CopyLayout>
-
 </BaseLayout>
 
 

@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/MDLayout.astro
 
-title: Leaving Windows
+title: 01 Leaving Windows
 pubDate: "2023-11-30"
 prev: ../blog
 next: post-02
