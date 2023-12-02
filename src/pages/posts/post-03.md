@@ -4,7 +4,7 @@ layout: ../../layouts/MDLayout.astro
 title: First Boot & Basic Settings
 pubDate: "2023-12-01"
 prev: post-02
-next: post-03
+next: post-04
 ---
 
 
@@ -33,6 +33,12 @@ mkdir -p ~/.config/autostart &&
 cp /etc/xdg/autostart/io.elementary.appcenter-daemon.desktop ~/.config/autostart/ &&
 echo "X-GNOME-Autostart-enabled=false" >> ~/.config/autostart/io.elementary.appcenter-daemon.desktop
 ```
+For GNOME file explorer, to remove sidebar navigation.<br>
+Use command to open config file, and then remove text after "$HOME" to hide item.
+```sh
+sudo nano ~/.config/user-dirs.dirs
+```
+
 
 ## Other Settings
 1. Keyring - change password to blank, ignore warnings, this prevents prompts. (local home machine is not public/insecure)
