@@ -3,6 +3,8 @@ layout: ../../layouts/MDLayout.astro
 
 title: First Boot & Basic Settings
 pubDate: "2023-12-01"
+prev: post-02
+next: post-03
 ---
 
 

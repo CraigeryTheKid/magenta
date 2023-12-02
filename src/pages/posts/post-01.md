@@ -3,6 +3,8 @@ layout: ../../layouts/MDLayout.astro
 
 title: Leaving Windows
 pubDate: "2023-11-30"
+prev: ../blog
+next: post-02
 ---
 
 
