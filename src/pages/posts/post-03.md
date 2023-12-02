@@ -26,6 +26,20 @@ You can combine commands! The `-y` automatically answers "yes" to the prompt.
 ```sh
 sudo apt update && sudo apt upgrade -y
 ```
+<br>
+
+## What about removing / cleaning?
+For removing specific packages, I recommend Synaptic Application Manager, to make find exact names easier.
+```sh
+sudo apt install synaptic
+```
+For cleaning up old installs and leftover pieces, this combo command takes care of it:
+```sh
+sudo apt autoclean && sudo apt --purge autoremove
+```
+<br>
+
+### Other customized setup:
 
 For Pop!_OS, I like to manually update, so this disables the AppStore without uninstalling it:
 ```sh
@@ -40,7 +54,3 @@ sudo nano ~/.config/user-dirs.dirs
 ```
 
 
-## Other Settings
-1. Keyring - change password to blank, ignore warnings, this prevents prompts. (local home machine is not public/insecure)
-2. User settings - auto login
-3. Privacy - lock screen & suspend - do not lock screen

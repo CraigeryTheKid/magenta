@@ -22,3 +22,15 @@ next: post-03
 4. partition4 - /home - ext4 - [rest of disk] - DO NOT format if this already contains /home data
 
 ## I should think of more things to put here?
+1. After first boot, general settings or welcome screen may appear.
+2. Without listing, go through all the settings as you desire.
+3. Next page starts command line, but honestly you can do a lot with out them!
+> * App Store - Search / Install / Remove programs you want<br>
+> * Firefox pre-installed, ready for web<br>
+> * Desktop UI will be familiar as a mix of Windows/Mac themes
+
+## Example Settings
+1. Keyring - change password to blank, ignore warnings, this prevents prompts. (local home machine is not public/insecure)
+2. User settings - auto login
+3. Privacy - lock screen & suspend - do not lock screen
+
