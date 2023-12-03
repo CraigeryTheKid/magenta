@@ -3,7 +3,7 @@ layout: ../../layouts/MDLayout.astro
 
 title: 11 VSCodium for web design
 prev: post-10
-next: post-12
+next: post-11
 ---
 
 

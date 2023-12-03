@@ -78,6 +78,7 @@ nano ~/Public/WOLcomm.bash
 After, hit "ctrl-x" to close, and hit "y" to save before closing.
 ```sh
 #!/usr/bin/bash
+
 count=0;
 while true; do
 	count=$count+1
