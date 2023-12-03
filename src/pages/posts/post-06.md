@@ -13,7 +13,7 @@ Simpler servers, like Pi-hole and picframe, will use the more basic SSH terminal
 
 ## SERVER SIDE - Remote Desktop
 
-Since the servers will use Debian, we need to install packages.<br>
+Since the servers will use Debian, we need to install some packages.<br>
 GNOME desktops may have some/most already, but they aren't as optimized for server life.<br>
 Install the XFCE desktop environment:
 ```sh
@@ -39,6 +39,10 @@ echo "xfce4-session" | tee .xsession
 After one (or both), restart xrdp:
 ```sh
 sudo systemctl restart xrdp
+```
+Some guides call out other packages you need, but they might be included in dependencies?
+```sh
+sudo apt install xorg dbus-x11 x11-xserver-utils xorgxrdp
 ```
 <br>
 
