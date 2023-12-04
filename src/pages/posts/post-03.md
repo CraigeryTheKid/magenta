@@ -36,6 +36,10 @@ For cleaning up old installs and leftover pieces, this combo command takes care 
 ```sh
 sudo apt autoclean && sudo apt --purge autoremove
 ```
+To clear "cache" folder from /home, items older than 6 months:
+```sh
+find ~/.cache/ -type f -atime +182 -delete
+```
 <br>
 
 ### Other customized setup:
