@@ -2,8 +2,8 @@
 layout: ../../layouts/MDLayout.astro
 
 title: 05 Network Share Folders
-prev: post-04
-next: post-06
+prev: ../post-04
+next: ../post-06
 ---
 
 

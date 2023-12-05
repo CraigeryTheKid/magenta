@@ -2,8 +2,8 @@
 layout: ../../layouts/MDLayout.astro
 
 title: 06 Remote Desktop
-prev: post-05
-next: post-07
+prev: ../post-05
+next: ../post-07
 ---
 
 

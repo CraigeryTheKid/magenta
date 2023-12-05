@@ -2,8 +2,8 @@
 layout: ../../layouts/MDLayout.astro
 
 title: 10 Firewall Settings
-prev: post-09
-next: post-11
+prev: ../post-09
+next: ../post-11
 ---
 
 
