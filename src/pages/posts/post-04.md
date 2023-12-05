@@ -2,8 +2,8 @@
 layout: ../../layouts/MDLayout.astro
 
 title: 04 Install Gaming Packages!
-prev: ../post-03
-next: ../post-05
+prev: ./post-03
+next: ./post-05
 ---
 
 

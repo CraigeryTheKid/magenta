@@ -2,8 +2,8 @@
 layout: ../../layouts/MDLayout.astro
 
 title: 08 Gigabyte B550 sleep issue
-prev: ../post-07
-next: ../post-09
+prev: ./post-07
+next: ./post-09
 ---
 
 

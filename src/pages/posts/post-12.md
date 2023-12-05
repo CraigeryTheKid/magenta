@@ -2,8 +2,8 @@
 layout: ../../layouts/MDLayout.astro
 
 title: 12 Raspberry Pi-hole & Mikrotik Router
-prev: ../post-11
-next: ../post-13
+prev: ./post-11
+next: ./post-13
 ---
 
 

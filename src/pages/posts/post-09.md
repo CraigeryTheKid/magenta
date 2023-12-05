@@ -2,8 +2,8 @@
 layout: ../../layouts/MDLayout.astro
 
 title: 09 Auto-updates and Cloud Backups
-prev: ../post-08
-next: ../post-10
+prev: ./post-08
+next: ./post-10
 ---
 
 
