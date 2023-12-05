@@ -2,8 +2,8 @@
 layout: ../../layouts/MDLayout.astro
 
 title: 07 Wake on LAN
-prev: ./post-06
-next: ./post-08
+prev: /posts/post-06
+next: /posts/post-08
 ---
 
 

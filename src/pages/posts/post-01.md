@@ -2,8 +2,8 @@
 layout: ../../layouts/MDLayout.astro
 
 title: 01 Leaving Windows
-prev: ../blog
-next: ./post-02
+prev: /posts/post-13
+next: /posts/post-02
 ---
 
 

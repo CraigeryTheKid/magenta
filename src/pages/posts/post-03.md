@@ -2,8 +2,8 @@
 layout: ../../layouts/MDLayout.astro
 
 title: 03 First Boot & Basic Settings
-prev: ./post-02
-next: ./post-04
+prev: /posts/post-02
+next: /posts/post-04
 ---
 
 

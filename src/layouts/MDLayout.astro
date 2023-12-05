@@ -34,30 +34,31 @@ import CopyLayout from './CopyLayout.astro';
     }
 </style>
 
-
 <BaseLayout pageTitle={frontmatter.title}>
 
+{frontmatter.prev} <br>
+{frontmatter.next} <br>
 
 <div class="tags">
-    <p class="tag"><a href='../blog'>Index</a></p>
-    <p class="tag"><a href={frontmatter.prev}>Previous Page</a></p>
-    <p class="tag"><a href={frontmatter.next}>Next Page</a></p>
+  <p class="tag"><a href="/blog/">Table of Contents</a></p>
+  <p class="tag"><a href={frontmatter.prev}>Previous Page</a></p>
+  <p class="tag"><a href={frontmatter.next}>Next Page</a></p>
 </div>
 
 <br>
 
 <CopyLayout>
-
 <slot />
+</CopyLayout>
 
 <br>
 <div class="tags">
-    <p class="tag"><a href='../blog'>Index</a></p>
-    <p class="tag"><a href={frontmatter.prev}>Previous Page</a></p>
-    <p class="tag"><a href={frontmatter.next}>Next Page</a></p>
+  <p class="tag"><a href="/blog/">Table of Contents</a></p>
+  <p class="tag"><a href={frontmatter.prev}>Previous Page</a></p>
+  <p class="tag"><a href={frontmatter.next}>Next Page</a></p>
 </div>
 
-</CopyLayout>
+
 </BaseLayout>
 
 
