@@ -8,6 +8,21 @@ const allPosts = await Astro.glob('../pages/posts/*.md');
 const pageTitle = "My PC Setup - GNU/Linux Edition";
 ---
 
+<style>
+    a {
+      color: #00539F;
+      padding: 0em .3em;
+      text-decoration: none;
+      font-size: 1.5em;
+      background-color: #F8FCFD;
+	  border: solid 1px #a1a1a1;
+      border-radius: .5em;
+    }
+	a:hover, a:focus {
+    background-color: #ff9776;
+  	}
+</style>
+
 <BaseLayout pageTitle={pageTitle}>
 
 	<h3>This is where I will post about my journey learning GNU/Linux. <br>
@@ -18,7 +33,7 @@ const pageTitle = "My PC Setup - GNU/Linux Edition";
 	</ul>
 
 
-	<br><br><br><br>
+	<br><br><br>
 	<p>PC Setup SOP started on Nov 25th, 2023</p>
 
 </BaseLayout>
