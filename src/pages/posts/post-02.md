@@ -28,6 +28,9 @@ next: /posts/post-03
 > * Firefox pre-installed, ready for web<br>
 > * Desktop UI will be familiar as a mix of Windows/Mac themes
 
+Helpful list of apps for all things Linux<br>
+[Awesome Linux Software](https://github.com/luong-komorebi/Awesome-Linux-Software)
+
 ## Example Settings
 1. Keyring - change password to blank, ignore warnings, this prevents prompts. (local home machine is not public/insecure)
 2. User settings - auto login
