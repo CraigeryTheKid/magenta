@@ -93,6 +93,7 @@ rclone --retries 2 \
        --checkers 6 \
        --transfers 6 \
        --drive-chunk-size 256M \
+       --exclude '.*{/**,}' \
        -P \
        sync ${SRC} ${DEST}
 ```
