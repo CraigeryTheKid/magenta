@@ -3,7 +3,7 @@ layout: ../../layouts/MDLayout.astro
 
 title: 13 Raspberry Pi as a simple home NAS
 prev: /posts/post-12
-next: /posts/post-01
+next: /posts/post-14
 ---
 
 
