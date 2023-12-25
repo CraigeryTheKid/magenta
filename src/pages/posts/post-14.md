@@ -16,11 +16,11 @@ Getting offset to work, AND RETAIN, is what took finding a random permission fix
 
 ## First, need to do the prereqs and permission fixes:
 
-1. Install "Coolbits", which allows gpu settings:
+1. Install full load "Coolbits", which allows gpu settings:
 ```sh
 sudo nvidia-xconfig -a --cool-bits=31 --allow-empty-initial-configuration
 ```
-2. First round of permissions
+2. First round of two user permissions
 ```sh
 sudo visudo
 ```
@@ -29,7 +29,7 @@ sudo visudo
 daddio        ALL = (ALL) NOPASSWD: /usr/bin/nvidia-persistenced
 daddio        ALL = (ALL) NOPASSWD: /usr/bin/nvidia-smi
 ```
-3. Second permission to add
+3. Third user permission to add
 ```sh
 sudo nano /etc/X11/Xwrapper.config
 ```
@@ -38,7 +38,7 @@ sudo nano /etc/X11/Xwrapper.config
 allowed_users = anybody
 needs_root_rights = yes
 ```
-- change permissions
+- change file permissions
 ```sh
 chmod 2644 /etc/X11/Xwrapper.config
 ```
@@ -97,11 +97,11 @@ sudo chmod 644 /etc/systemd/system/gpusettings.service
 ```
 6. reload & enable service:
 ```sh
-sudo systemctl daemon-reload && systemctl enable nogpp.service
+sudo systemctl daemon-reload && systemctl enable gpusettings.service
 ```
-7. Make sure it's running:
+7. Make sure it worked with no errors; Reboot after for good measure.
 ```sh
-systemctl status nogpp.service
+systemctl status gpusettings.service
 ```
 <br>
 
