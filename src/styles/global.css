@@ -86,12 +86,17 @@ html {
   }
 
   html.dark {
-    background-color: #0d0950;
+    background-color: #272729;
     color: #fff;
   }
   
   .dark .nav-links a {
     color: #fff;
+  }
+
+  .dark a {
+    color: blue;
+    
   }
 
 
