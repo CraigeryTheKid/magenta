@@ -93,12 +93,16 @@ html {
   .dark .nav-links a {
     color: #fff;
   }
+  .dark .nav-links a:visited {
+    color: #fff;
+  }
 
   .dark a {
     color: #3498db;
-    
   }
-
+  .dark a:visited {
+    color: #5834db;
+  }
 
 /* code block copy buttons */
 
