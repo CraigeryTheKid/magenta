@@ -80,9 +80,9 @@ and replace 192.168.1.0/24 with your LAN subnet:<br>
 ```sh
 /ip firewall nat add chain=srcnat action=masquerade protocol=tcp src-address=192.168.88.0/24 dst-address=192.168.88.252 dst-port=53
 ```
-- Some additional fun Mikrotik Setup; auto update and then auto reboot, weekly
-    - SYSTEM > Scheduler --> on event "/system reboot"; interval "7d 00:00:00"
-	- SYSTEM > Scheduler --> on event "/system package update download", make 30 min earlier!
+Some additional fun Mikrotik Setup: auto update and then auto reboot, weekly
+- SYSTEM > Scheduler --> on event "/system reboot"; interval= "7d 00:00:00"; pick tuesday morning
+- SYSTEM > Scheduler --> on event "/system package update download", same 7d; make 30 min earlier!
 
 <br>
 
@@ -97,7 +97,7 @@ sudo nano /etc/hosts
 ```
 <br>
 
-HAD ISSUES getting PI-HOLE to be the DHCP server
+### HAD ISSUES getting PI-HOLE to be the DHCP server
    - Had to keep Mikrotik DHCP 'active' - but literally ONLY on the pi-hole
    - It's possible it has to do with the default network settings kicking in?
 

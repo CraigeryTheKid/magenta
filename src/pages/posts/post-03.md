@@ -50,18 +50,13 @@ mkdir -p ~/.config/autostart &&
 cp /etc/xdg/autostart/io.elementary.appcenter-daemon.desktop ~/.config/autostart/ &&
 echo "X-GNOME-Autostart-enabled=false" >> ~/.config/autostart/io.elementary.appcenter-daemon.desktop
 ```
-For GNOME file explorer, to remove sidebar navigation.<br>
-Use command to open config file, and then remove text after "$HOME" to hide item.
-```sh
-sudo nano ~/.config/user-dirs.dirs
-```
 
 ### I enjoy making unnecessary scripts, like this do-all updater & cleaner:
-- Make file
+1. Make file
 ```sh
 sudo nano /usr/local/bin/bondate
 ```
-- copy this:
+2. copy this:
 ```sh
 #!/bin/bash
 
@@ -73,15 +68,19 @@ sudo apt --purge autoremove && \
 find ~/.cache/ -type f -atime +182 -delete && \
 sudo needrestart
 ```
-- make executable:
+3. make executable:
 ```sh
 sudo chmod +x /usr/local/bin/bondate
 ```
-- and now 'bondate' in any terminal runs all the updates!
+4. and now 'bondate' in any terminal runs all the updates!
     - you will still have the chance to say "no" to installs
     - the last "find cache" removes temp cache IF it's older than 6 months
 
+<br>
+
 #### Random audio fix
+Might not work, or do anything? Still investigating issues with Pipewire.
+
 ```sh
 #1/bin/bash
 systemctl --user restart wireplumber pipewire pipewire-pulse

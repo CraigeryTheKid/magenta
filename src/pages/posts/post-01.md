@@ -18,11 +18,19 @@ Nearly any of these would have worked eventually, but I focused on "out of the b
 
 4. **Debian**: Upstream to Ubuntu (and many others), foundational to GNU/Linux ecosystem.<br>Very clean and customizable, almost to a negative for beginners/newcomers like me.<br>Still, my Raspberry Pis run a version of Debian, and my home server will likely be Debian (xfce destop) too.<br>Fully recommend for servers and headless functions, but not as your daily desktop driver.
 
-5. **Kubuntu**: Ubuntu, but with KDE desktop. KDE felt better than Cinnamon, but not Pop!_OS
-6. **Zorin**: Another Ubuntu based. They have a paid version, and again just didn't grab me.
-7. **Fedora based**: Didn't try, seems to have a strong following, but still not as "easy" or gaming-made.
-8. **SUSE based**: Same as Fedora. Didn't try, didn't seem beginner/gaming focused.
-9. **Anything ARCH based**: Not for beginners, ignore online saying otherwise.
+5. **Other Ubuntu-based**<br>
+Any other Ubuntu-based will honestly give similar results to to each other
+   - **Kubuntu**: Ubuntu, but with KDE desktop. KDE felt better than Cinnamon, but not Pop!_OS
+   - **Zorin**: Another Ubuntu based. They have a paid version, and again just didn't grab me.
+   - **Elementary OS**: another one tried
+
+6. **Non-Ubuntu-based**<br>
+Plenty online will recommend these, and I'm sure they work.<br>
+But they might have less support, and might need more tinkering for the more detailed desires.
+   - **Fedora based**: Didn't try, seems to have a strong following, but still not as "easy" or gaming-made.
+   - **SUSE based**: Same as Fedora. Didn't try, didn't seem beginner/gaming focused.
+
+7. **Anything ARCH based**: Not for beginners, ignore online saying otherwise.
 
 <br>
 

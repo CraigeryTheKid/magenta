@@ -16,14 +16,14 @@ next: /posts/post-03
 ## Install Setup and Partitions
 1. Follow steps basically... option to choose custom partitions if you want.
 2. partition1 - /boot/efi - fat32 - 2gb - format
-3. partition2 - 'swap' - swap - 8gb
-4. partition3 - / (root) - ext4 - [rest of disk] _OR_ [80gb and split /home below] - format
+3. partition2 - 'swap' - swap - 2gb     (Don't need big with 32gb ram)
+4. partition3 - / (root) - ext4 - [rest of disk] _OR_ [96gb and split /home below] - format
 4. partition4 - /home - ext4 - [rest of disk] - DO NOT format if this already contains /home data
 
 ## I should think of more things to put here?
 1. After first boot, general settings or welcome screen may appear.
-2. Without listing, go through all the settings as you desire.
-3. Next page starts command line, but honestly you can do a lot with out them!
+2. Without listing them, go through all the settings as you desire.
+3. Next page starts command line, but honestly you can do most basics without them!
 > * App Store - Search / Install / Remove programs you want<br>
 > * Firefox pre-installed, ready for web<br>
 > * Desktop UI will be familiar as a mix of Windows/Mac themes
@@ -35,4 +35,5 @@ Helpful list of apps for all things Linux<br>
 1. Keyring - change password to blank, ignore warnings, this prevents prompts. (local home machine is not public/insecure)
 2. User settings - auto login
 3. Privacy - lock screen & suspend - do not lock screen
+4. Power & Display energy saving options
 

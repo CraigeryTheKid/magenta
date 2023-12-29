@@ -58,12 +58,7 @@ Note this is for RTX 3080 10gb; "user/1000" may need changed per install.
 nvidia-smi -pm 1
 nvidia-smi -i 0 -pl 270
 nvidia-smi -i 0 -lgc 0,1800
-
 DISPLAY=:0 XAUTHORITY=/run/user/1000/gdm/Xauthority nvidia-settings \
- -a [gpu:0]/GPUFanControlState=1 \
- -a [fan:0]/GPUTargetFanSpeed=70 \
- -a [fan:1]/GPUTargetFanSpeed=70 \
- -a [gpu:0]/GPUPowerMizerMode=0 \
  -a [gpu:0]/GPUGraphicsClockOffsetAllPerformanceLevels=200 \
  -a [gpu:0]/GPUMemoryTransferRateOffsetAllPerformanceLevels=1000
 ```
@@ -76,28 +71,25 @@ sudo nano /etc/systemd/system/gpusettings.service
 [Unit]
 Description=GPU power limiter
 After=network.target
-StartLimitIntervalSec=0
 
 [Service]
 User=root
-Type=simple
-Restart=always
-RestartSec=1
+Type=oneshot
+ExecStartPre=/bin/sleep 15
 ExecStart=/usr/local/bin/gpusettings.sh
 
 [Install]
 WantedBy=multi-user.target
+
 ```
 5. change permissions on both new files:
 ```sh
-sudo chmod 744 /usr/local/bin/gpusettings.sh
-```
-```sh
+sudo chmod 744 /usr/local/bin/gpusettings.sh && 
 sudo chmod 644 /etc/systemd/system/gpusettings.service
 ```
 6. reload & enable service:
 ```sh
-sudo systemctl daemon-reload && systemctl enable gpusettings.service
+sudo systemctl daemon-reload && sudo systemctl enable gpusettings.service
 ```
 7. Make sure it worked with no errors; Reboot after for good measure.
 ```sh
@@ -106,7 +98,7 @@ systemctl status gpusettings.service
 <br>
 
 ## So what happened?
-Nvidia really doesn't make it easy to change settings, for basic overclocks<br>
+Nvidia really doesn't make it easy to change settings for basic overclocks<br>
 AMD cards will for sure be in the future.<br>
 I don't know how, but essentially a day was spent daisy-chaining searching until it came to an answer.
 
