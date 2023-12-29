@@ -57,16 +57,16 @@ Configure your devices to use the Pi-hole as their DNS server using:
     - Add to Blacklist > Regex [Blacklist regex list](https://raw.githubusercontent.com/mmotti/pihole-regex/master/regex.list)
 
 ## Final DNS server setup, back on Mikrotik
-- IP > DHCP Server > Leases > static IP to pi-hole
 - IP > DHCP Client > DHCP Client tab --> click on Interface --> uncheck "Use Peer DNS"
-- IP > DHCP Server > Networks tab --> click on Address --> enter pi-hole IP under "DNS Servers"
+- IP > DHCP Server > Leases > static IP to pi-hole IP address
+- IP > DHCP Server > Networks tab --> click on entry --> enter pi-hole IP address under "DNS Servers"
 - IP > DHCP Server > Networks tab --> give Domain name (local)
 - IP > DNS --> Dynamic Servers should be empty due to Step #1
-- IP > DNS --> Enter pi-hole IP under "Servers"
+- IP > DNS --> Enter pi-hole IP address under "Servers"
 - IP > DNS *UNCHECK* "allow remote requests"
 
 To force all traffic to the pi-hole from DNS, insert rules under; IP > Firewall > NAT tab<br>
-Type these in terminal, replace 192.168.1.250 with your Pi-hole IP address,<br>
+Type these in terminal (use SSH!), replace 192.168.1.250 with your Pi-hole IP address,<br>
 and replace 192.168.1.0/24 with your LAN subnet:<br>
 ```sh
 /ip firewall nat add chain=dstnat action=dst-nat to-addresses=192.168.88.252 protocol=udp src-address=!192.168.88.252 dst-address=!192.168.88.252 dst-port=53 in-interface=!ether1
@@ -84,6 +84,8 @@ and replace 192.168.1.0/24 with your LAN subnet:<br>
     - SYSTEM > Scheduler --> on event "/system reboot"; interval "7d 00:00:00"
 	- SYSTEM > Scheduler --> on event "/system package update download", make 30 min earlier!
 
+<br>
+
 ## Additional Pi-hole settings to propose
 
 - Settings > DNS
@@ -92,6 +94,16 @@ and replace 192.168.1.0/24 with your LAN subnet:<br>
 - To get the names of clients, instead of just numbers, edit this file from dietpi terminal:
 ```sh
 sudo nano /etc/hosts
+```
+<br>
+
+HAD ISSUES getting PI-HOLE to be the DHCP server
+   - Had to keep Mikrotik DHCP 'active' - but literally ONLY on the pi-hole
+   - It's possible it has to do with the default network settings kicking in?
+
+Go here and change IP address and gateway to match starting points?:
+```sh
+sudo nano /etc/network/interfaces
 ```
 - IF PI-HOLE IS ALSO DHCP SERVER, can have specific clients bypass pi-hole
 ```sh

@@ -56,4 +56,34 @@ Use command to open config file, and then remove text after "$HOME" to hide item
 sudo nano ~/.config/user-dirs.dirs
 ```
 
+### I enjoy making unnecessary scripts, like this do-all updater & cleaner:
+- Make file
+```sh
+sudo nano /usr/local/bin/bondate
+```
+- copy this:
+```sh
+#!/bin/bash
+
+sudo apt update && \
+sudo apt upgrade && \
+flatpak update && \
+sudo apt autoclean && \
+sudo apt --purge autoremove && \
+find ~/.cache/ -type f -atime +182 -delete && \
+sudo needrestart
+```
+- make executable:
+```sh
+sudo chmod +x /usr/local/bin/bondate
+```
+- and now 'bondate' in any terminal runs all the updates!
+    - you will still have the chance to say "no" to installs
+    - the last "find cache" removes temp cache IF it's older than 6 months
+
+#### Random audio fix
+```sh
+#1/bin/bash
+systemctl --user restart wireplumber pipewire pipewire-pulse
+```
 

@@ -71,13 +71,13 @@ sudo apt install wakeonlan
 Then we need to make the new script, that Remmina (already installed) will run.
 1. Open new empty script
 ```sh
-nano ~/Public/WOLcomm.bash
+sudo nano /usr/local/bin/wgrog
 ```
 2. Copy this into the document.<br>
 **You will need to get the local IP and the MAC address for the server!**<br>
 After, hit "ctrl-x" to close, and hit "y" to save before closing.
 ```sh
-#!/usr/bin/bash
+#!/bin/bash
 
 count=0;
 while true; do
@@ -95,12 +95,12 @@ done
 ```
 New script needs to be executable as a program:
 ```sh
-chmod +x ~/Public/WOLmp.bash
+sudo chmod +x /usr/local/bin/wgrog
 ```
 Final step - back in Remmina, settings, enter this in "preload behavior"<br>
 Calling the new script will WAKE the server, before trying to Remote Desktop into it.
 ```sh
-bash /home/daddio/Public/WOLmp.bash
+bash /usr/local/bin/wgrog
 ```
 <br>
 
