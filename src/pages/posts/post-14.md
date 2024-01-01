@@ -51,7 +51,11 @@ chmod 2644 /etc/X11/Xwrapper.config
 sudo nano /usr/local/bin/gpusettings.sh
 ```
 2. Copy into new script; save & close:<br>
-Note this is for RTX 3080 10gb; "user/1000" may need changed per install.
+Note this is for RTX 3080 10gb; "user/1000" may need changed per install.<br>
+- **MaxClock** "1800 mhz" is oem-listed boost clock (even though it goes much higher!)<br>
+- **Offset** "200 mhz" was internet-inspired, roughly 10% of boost?<br>
+- **Memory** "1000" translates to 19500 -> 20000, only a 2.5% boost? Idunno internet did it too.<br>
+- **Power** "270 W" was set after the above and observing ~260W; optional; additional guardrail.
 ```sh
 #!/bin/bash
 
@@ -71,12 +75,13 @@ sudo nano /etc/systemd/system/gpusettings.service
 [Unit]
 Description=GPU power limiter
 After=network.target
+After=display-manager.service
 
 [Service]
 User=root
-Type=oneshot
-ExecStartPre=/bin/sleep 15
 ExecStart=/usr/local/bin/gpusettings.sh
+Restart=on-failure
+RestartSec=1
 
 [Install]
 WantedBy=multi-user.target
@@ -100,13 +105,16 @@ systemctl status gpusettings.service
 ## So what happened?
 Nvidia really doesn't make it easy to change settings for basic overclocks<br>
 AMD cards will for sure be in the future.<br>
-I don't know how, but essentially a day was spent daisy-chaining searching until it came to an answer.
+A day was spent daisy-chaining searching until it came to an answer.
 
 Prints system info if you need to troubleshoot
 ```sh
 nvidia-smi -i 0 -q
 ```
-Prints system info for power & freqs of interest
+Prints system info for power & freqs of interest; make intro script for more fun!
 ```sh
-nvidia-smi -i 0 -q | grep 'Power Draw' && nvidia-smi -i 0 -q | grep 'Graphics'
+#1/bin/bash
+nvidia-smi -i 0 -q | grep -A1 'Voltage' && \
+nvidia-smi -i 0 -q | grep -m1 'Graphics' && \
+nvidia-smi -i 0 -q | grep -m1 'Power Draw'
 ```
