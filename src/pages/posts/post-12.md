@@ -116,5 +116,5 @@ sudo nano /etc/dnsmasq.d/bypass.conf
 dhcp-option=tag:googlesdns1,6,8.8.8.8
 
 ## Your Device that goes to Google DNS
-dhcp-host=8C:04:BA:77:4E:16,set:googlesdns1
+dhcp-host=MAC:ADD:RESS,set:googlesdns1
 ```

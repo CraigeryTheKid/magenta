@@ -3,7 +3,7 @@ layout: ../../layouts/MDLayout.astro
 
 title: 14 Nvidia Undervolting Guide
 prev: /posts/post-13
-next: /posts/post-01
+next: /posts/post-15
 ---
 
 
