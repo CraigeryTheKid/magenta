@@ -78,11 +78,3 @@ sudo chmod +x /usr/local/bin/bondate
 
 <br>
 
-#### Random audio fix
-Might not work, or do anything? Still investigating issues with Pipewire.
-
-```sh
-#1/bin/bash
-systemctl --user restart wireplumber pipewire pipewire-pulse
-```
-

@@ -14,13 +14,11 @@ Pi-hole is named for usually being on a Raspberry Pi, and a router is only *requ
 ## Initial setup & comments
 Assuming you are starting with standard PC connected directly to ISP gateway.
 - Note local IP address & password to your ISP modem/gateway
-    - "ipconfig" in Windows
 - start with default gateway (AT&T) and default router (Mikrotik) settings
 - Connect AT&T LAN to Mikrotik **'ether1'**
 - Connect PC to Mikrotik, and connect to router with IP address in browser
-- run updates on Mikrotik router
 - Back to AT&T gateway, set Mikrotik for **"passthrough/DMZ"** so router is DHCP server and public IP address
-- reboot Mikrotik
+- reboot Mikrotik (/system reboot)
 
 ## Create Pi-hole on a Raspberry Pi
 - download Dietpi for RPi4
@@ -65,21 +63,6 @@ Configure your devices to use the Pi-hole as their DNS server using:
 - IP > DNS --> Enter pi-hole IP address under "Servers"
 - IP > DNS *UNCHECK* "allow remote requests"
 
-To force all traffic to the pi-hole from DNS, insert rules under; IP > Firewall > NAT tab<br>
-Type these in terminal (use SSH!), replace 192.168.1.250 with your Pi-hole IP address,<br>
-and replace 192.168.1.0/24 with your LAN subnet:<br>
-```sh
-/ip firewall nat add chain=dstnat action=dst-nat to-addresses=192.168.88.252 protocol=udp src-address=!192.168.88.252 dst-address=!192.168.88.252 dst-port=53 in-interface=!ether1
-```
-```sh
-/ip firewall nat add chain=dstnat action=dst-nat to-addresses=192.168.88.252 protocol=tcp src-address=!192.168.88.252 dst-address=!192.168.88.252 dst-port=53 in-interface=!ether1 
-```
-```sh
-/ip firewall nat add chain=srcnat action=masquerade protocol=udp src-address=192.168.88.0/24 dst-address=192.168.88.252 dst-port=53
-```
-```sh
-/ip firewall nat add chain=srcnat action=masquerade protocol=tcp src-address=192.168.88.0/24 dst-address=192.168.88.252 dst-port=53
-```
 Some additional fun Mikrotik Setup: auto update and then auto reboot, weekly
 - SYSTEM > Scheduler --> on event "/system reboot"; interval= "7d 00:00:00"; pick tuesday morning
 - SYSTEM > Scheduler --> on event "/system package update download", same 7d; make 30 min earlier!
@@ -90,20 +73,27 @@ Some additional fun Mikrotik Setup: auto update and then auto reboot, weekly
 
 - Settings > DNS
     - Check which DNS you are using; I switched to Cloudflare
-    - Uncheck both "never forward" options
 - To get the names of clients, instead of just numbers, edit this file from dietpi terminal:
 ```sh
 sudo nano /etc/hosts
 ```
+update pihole
+```sh
+sudo pihole -up
+```
 <br>
 
-### HAD ISSUES getting PI-HOLE to be the DHCP server
-   - Had to keep Mikrotik DHCP 'active' - but literally ONLY on the pi-hole
-   - It's possible it has to do with the default network settings kicking in?
+## Making PI-HOLE to be the DHCP server
+   - Got it working by settings STATIC IP in the pihole config
+   - And then fixed other issues by correcting the .conf files within /etc/dnsmasq.d/
 
-Go here and change IP address and gateway to match starting points?:
+Go here and change IP address and gateway to match starting points:
 ```sh
 sudo nano /etc/network/interfaces
+```
+or use the config, but it was acting weird for me:
+```sh
+dietp-config
 ```
 - IF PI-HOLE IS ALSO DHCP SERVER, can have specific clients bypass pi-hole
 ```sh
@@ -111,10 +101,29 @@ sudo nano /etc/dnsmasq.d/bypass.conf
 ```
 ```sh
 ## DOESNT WORK UNLESS PIHOLE IS DHCP SERVER
+## pihole-FTL dnsmasq-test   --to test settings
+## service pihole-FTL restart   --to reset pihole with ANY DNS/DHCP settings
+## MAKE SURE THESE DEVICES ARE NOT LISTED IN STATIC IP FILE IN /etc/dnsmasq.d/*
 
 ## This will go straight to Googles DNS Servers.
 dhcp-option=tag:googlesdns1,6,8.8.8.8
 
-## Your Device that goes to Google DNS
-dhcp-host=MAC:ADD:RESS,set:googlesdns1
+## Your Devices that go to Google DNS
+
+dhcp-host=8C:04:BA:11:49:31,192.168.88.175,set:googlesdns1
+dhcp-host=90:48:6C:FC:6E:DC,192.168.88.130,set:googlesdns1,RingDoor
+```
+When you make any changes within DNSMASQ - trigger a restart!:
+```sh
+service pihole-FTL restart
+```
+useful commands for testing/fixing/reviewing:
+```sh
+pihole-FTL dnsmasq-test
+```
+```sh
+pihole -d | less
+```
+```sh
+tail -f /var/log/pihole.log | grep DHCP
 ```

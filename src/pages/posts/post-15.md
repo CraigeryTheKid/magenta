@@ -61,3 +61,7 @@ Super complicated:
 ```sh
 sudo apt install p7zip-full p7zip-rar
 ```
+to unzip with directories:
+```sh
+7z x filename
+```

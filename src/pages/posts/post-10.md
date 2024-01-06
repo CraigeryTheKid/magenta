@@ -20,9 +20,9 @@ Allow ssh connections, which use port 22
 ```sh
 sudo ufw allow ssh && sudo ufw allow 22
 ```
-Allow samba connections, for network shares
+Allow samba & syncthing connections, for home network
 ```sh
-sudo ufw allow samba
+sudo ufw allow samba && sudo ufw allow syncthing
 ```
 Allow remote desktop, which use 3389, for local LAN only<br>
 May need to change IP range to your local setup

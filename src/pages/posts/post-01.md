@@ -20,17 +20,17 @@ Nearly any of these would have worked eventually, but I focused on "out of the b
 
 5. **Other Ubuntu-based**<br>
 Any other Ubuntu-based will honestly give similar results to to each other
-   - **Kubuntu**: Ubuntu, but with KDE desktop. KDE felt better than Cinnamon, but not Pop!_OS
-   - **Zorin**: Another Ubuntu based. They have a paid version, and again just didn't grab me.
+   - **Kubuntu**: Ubuntu, but with KDE desktop. KDE felt better than Cinnamon, but not Pop!_OS.
+   - **Zorin**: Another Ubuntu based. They have a paid version, that they were kinda pushy to get.
    - **Elementary OS**: another one tried
 
 6. **Non-Ubuntu-based**<br>
 Plenty online will recommend these, and I'm sure they work.<br>
 But they might have less support, and might need more tinkering for the more detailed desires.
-   - **Fedora based**: Didn't try, seems to have a strong following, but still not as "easy" or gaming-made.
+   - **Fedora based**: Didn't try, seems to have a strong following.
    - **SUSE based**: Same as Fedora. Didn't try, didn't seem beginner/gaming focused.
 
-7. **Anything ARCH based**: Not for beginners, ignore online saying otherwise.
+7. **Anything ARCH based**: Not for beginners, ignore online saying otherwise, requires more attention/knowledge.
 
 <br>
 
