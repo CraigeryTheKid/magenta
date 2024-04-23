@@ -99,3 +99,29 @@ Remove unwanted shortcuts that WINE adds to Launcher:
 ```sh
 rm -f ~/.config/menus/applications-merged/wine* && rm -rf ~/.local/share/applications/wine
 ```
+<br>
+
+### Add dll to Steam (Proton) to get Bepinex to work:
+
+- Install protonticks:
+```sh
+sudo apt install python3-pip python3-setuptools python3-venv pipx
+```
+- Close terminal, and then re-open and run:
+```sh
+pipx install protontricks
+```
+- to upgrade:
+```sh
+pipx upgrade protontricks
+```
+- open protontricks, which helps pick the game for you:
+```sh
+protontricks --gui
+```
+- pick game
+- default prefix
+- run winecfg
+- go to libraries
+- add "winhttp", for example, to load custom dll
+   - similar step for Lutris, just add to settings for game, add "native & builtin"
