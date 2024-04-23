@@ -101,6 +101,13 @@ rm -f ~/.config/menus/applications-merged/wine* && rm -rf ~/.local/share/applica
 ```
 <br>
 
+Auto-start Steam (Flatpak)<br>
+Add with Startup Apps App:
+```sh
+/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=/app/bin/steam --file-forwarding com.valvesoftware.Steam @@u -silent %U @@
+```
+<br>
+
 ### Add dll to Steam (Proton) to get Bepinex to work:
 
 - Install protonticks:
