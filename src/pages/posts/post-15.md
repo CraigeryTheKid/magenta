@@ -3,7 +3,7 @@ layout: ../../layouts/MDLayout.astro
 
 title: 15 Syncthing | Jackett | 7zip | PDF
 prev: /posts/post-14
-next: /posts/post-01
+next: /posts/post-16
 ---
 
 
