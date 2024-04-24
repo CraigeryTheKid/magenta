@@ -55,6 +55,7 @@ Configure IPSEC settings
 /ip ipsec policy add dst-address=0.0.0.0/0 group=vpn proposal=vpn src-address=0.0.0.0/0 template=yes
 ```
 
+<br>
 
 
 ## Additional VPN Client (if needed)
@@ -70,6 +71,8 @@ Create IPSEC identity
 /ip ipsec identity add auth-method=digital-signature certificate="Home server" comment="Home client2" generate-policy=port-strict match-by=certificate mode-config=vpn peer=vpn policy-template-group=vpn remote-certificate="Home client2"
 ```
 
+<br>
+<br>
 
 ## ANDROID Phone
 
