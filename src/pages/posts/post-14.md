@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/MDLayout.astro
 
-title: 14 Nvidia Undervolting Guide
+title: 14 Nvidia Undervolting & Display Guide
 prev: /posts/post-13
 next: /posts/post-15
 ---
@@ -117,4 +117,56 @@ Prints system info for power & freqs of interest; make intro script for more fun
 nvidia-smi -i 0 -q | grep -A1 'Voltage' && \
 nvidia-smi -i 0 -q | grep -m1 'Graphics' && \
 nvidia-smi -i 0 -q | grep -m1 'Power Draw'
+```
+<br><br>
+
+## Nvidia DISPLAY Issues ~~~~~~~~~
+
+### Remove Phantom monitor
+
+- Find monitor port/name
+```sh
+xrandr -q
+```
+
+- Open Xorg config file
+```sh
+sudo nano /etc/X11/xorg.conf.d/10-monitor.conf
+```
+- Enter the following (for display in question)
+```sh
+Section "Monitor"
+    Identifier "None-1-1"
+    Option "Ignore" "true"
+EndSection
+```
+<br>
+
+### Can't Save nvidia-settings file
+
+- run nvidia-settings from terminal
+```sh
+sudo nvidia-settings
+```
+- try to save config, and note/verify file path
+- file path & command in my case are below:
+```sh
+sudo chmod u+x /usr/share/screen-resolution-extra/nvidia-polkit
+```
+<br>
+
+### Pop/Gnome resetting monitor settings
+
+- run open config from terminal
+```sh
+nano ~/.config/monitors.xml 
+```
+- edit monitor settings; in my case resolution & refresh of HDMI TV
+    - May also need to delete "interlaced" or other modifiers
+```sh
+<mode>
+    <width>1920</width>
+    <height>1080</height>
+    <rate>60</rate>
+</mode>
 ```

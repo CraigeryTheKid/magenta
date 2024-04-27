@@ -101,8 +101,19 @@ rm -f ~/.config/menus/applications-merged/wine* && rm -rf ~/.local/share/applica
 ```
 <br>
 
-Auto-start Steam (Flatpak)<br>
-Add with Startup Apps App:
+## Auto-start Steam (Flatpak)<br>
+
+Install Steam from Flatpak:
+```sh
+flatpak install flathub com.valvesoftware.Steam
+```
+RUN Steam once for it to update/login
+```sh
+flatpak run com.valvesoftware.Steam
+```
+
+INSIDE "Startup Apps" tool, NOT command line:<br>
+- Add with Startup Apps App:
 ```sh
 /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=/app/bin/steam --file-forwarding com.valvesoftware.Steam @@u -silent %U @@
 ```

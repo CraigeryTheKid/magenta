@@ -13,8 +13,9 @@ Simpler servers, like Pi-hole and picframe, will use the more basic SSH terminal
 
 ## SERVER SIDE - Remote Desktop
 
-Since the servers will use Debian, we need to install some packages.<br>
-GNOME desktops may have some/most already, but they aren't as optimized for server life.<br>
+IF server uses Debian, we need to install some packages.<br>
+Pop!_OS has this installed already, but they aren't as optimized for [headless] server life.<br>
+
 Install the XFCE desktop environment:
 ```sh
 sudo apt install -y xfce4 xfce4-goodies	

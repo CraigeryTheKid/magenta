@@ -61,8 +61,8 @@ sudo nano /usr/local/bin/bondate
 #!/bin/bash
 
 sudo apt update && \
-sudo apt upgrade && \
-flatpak update && \
+sudo apt upgrade ; \
+flatpak update ; \
 sudo apt autoclean && \
 sudo apt --purge autoremove && \
 find ~/.cache/ -type f -atime +182 -delete && \
