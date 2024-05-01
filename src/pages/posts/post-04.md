@@ -101,7 +101,7 @@ rm -f ~/.config/menus/applications-merged/wine* && rm -rf ~/.local/share/applica
 ```
 <br>
 
-## Auto-start Steam (Flatpak)<br>
+## Auto-start Steam (Flatpak) ~~~~~~~~~~~~~~~~~~<br>
 
 Install Steam from Flatpak:
 ```sh
@@ -143,3 +143,20 @@ protontricks --gui
 - go to libraries
 - add "winhttp", for example, to load custom dll
    - similar step for Lutris, just add to settings for game, add "native & builtin"
+
+<br>
+
+## Another Flatpak Install: FFXIVLauncher ~~~~~~~~~~<br>
+
+Install from Flatpak:
+```sh
+flatpak install flathub dev.goats.xivlauncher
+```
+RUN once for it to update/login, then use App Launcher
+```sh
+flatpak run dev.goats.xivlauncher
+```
+- Make sure to select Full vs Trial version<br>
+- Disable AddOns if desired (not technically supported by SquareEnix)
+
+

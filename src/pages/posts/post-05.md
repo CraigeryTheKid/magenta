@@ -73,3 +73,22 @@ sudo nano /etc/fstab
 ```sh
 //SERVER/share /home/username/folder cifs uid=username,username=guestname,password=smbpassword 0 0
 ```
+
+<br>
+
+## Add shared printer to network ~~~~~~~~~~~~~~~~~~~~
+### First, need to share it
+- Settings -> Printer -> Additional Settings (or right-click?)
+    - Server -> Server Settings
+        - "Publish shared printers"
+- Settings -> Printer -> Additional Settings (or right-click?)
+    - Printer settings
+        - Check "Enabled" and "Shared"
+### Then, if firewalled, add rule to allow
+- Easy gui tool for ufw
+```sh
+sudo apt install gufw  
+```
+- Then, add rule in "preconfigured" tab:
+    - Allow; In; Network; Printing; CUPS
+
