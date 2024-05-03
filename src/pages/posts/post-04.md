@@ -119,7 +119,7 @@ INSIDE "Startup Apps" tool, NOT command line:<br>
 ```
 <br>
 
-### Add dll to Steam (Proton) to get Bepinex to work:
+### Protontricks: Add dll to Steam to get Bepinex to work:
 
 - Install protonticks:
 ```sh
@@ -133,7 +133,7 @@ pipx install protontricks
 ```sh
 pipx upgrade protontricks
 ```
-- open protontricks, which helps pick the game for you:
+- Close terminal, and then re-open protontricks, which helps pick the game for you:
 ```sh
 protontricks --gui
 ```
