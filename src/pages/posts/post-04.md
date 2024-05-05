@@ -39,10 +39,6 @@ Now update & install WINE!
 ```sh
 sudo apt update && sudo apt install --install-recommends winehq-stable
 ```
-Check version:
-```sh
-wine --version
-```
 Run wine command prompt (below) and then type " echo %temp% " to make sure temp folder exists.
 ```sh
 wine cmd
@@ -58,14 +54,16 @@ winecfg
 Lutris can install games for you, using their database!<br>
 Or, you can point it to manually installed games, and it will add to launcher.
 
-Add PPA source of repo:
+Install FlatPak:
 ```sh
-sudo add-apt-repository ppa:lutris-team/lutris
+flatpak install flathub net.lutris.Lutris
 ```
-Run update & install Lutris!:
-```sh
-sudo apt update && sudo apt install lutris
-```
+Settings to tweak if games have issue:
+- First, always use winetricks to make prefix per game!!
+- Wine Version (down to 8.9, etc.)
+- DXVK, other similar settings
+- Use winetricks to install vcrun2022, or others needed
+
 <br>
 
 
@@ -77,10 +75,6 @@ sudo apt install winetricks
 ```sh
 sudo winetricks --self-update
 ```
-Check version:
-```sh
-winetricks --version
-```
 <br>
 
 
@@ -90,6 +84,10 @@ Add vulkan and other drivers that games need:
 ```sh
 sudo add-apt-repository ppa:graphics-drivers/ppa && 
 sudo apt update && sudo apt install -y libvulkan1 libvulkan1:i386
+```
+If using AMD-based graphics:
+```sh
+sudo apt install mesa-vulkan-drivers mesa-vulkan-drivers:i386
 ```
 Add 10 second delay for "not responding" interlock (needed randomly in GNOME):
 ```sh

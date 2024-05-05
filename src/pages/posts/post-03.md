@@ -60,13 +60,9 @@ sudo nano /usr/local/bin/bondate
 ```sh
 #!/bin/bash
 
-sudo apt update && \
-sudo apt upgrade ; \
+sudo apt update && sudo apt upgrade ; \
 flatpak update ; \
-sudo apt autoclean && \
-sudo apt --purge autoremove && \
-find ~/.cache/ -type f -atime +182 -delete && \
-sudo needrestart
+sudo apt autoclean
 ```
 3. make executable:
 ```sh
@@ -74,7 +70,20 @@ sudo chmod +x /usr/local/bin/bondate
 ```
 4. and now 'bondate' in any terminal runs all the updates!
     - you will still have the chance to say "no" to installs
-    - the last "find cache" removes temp cache IF it's older than 6 months
 
 <br>
 
+## Random audio cracking issues: ~~~~~~~~~~~~~~~~~~~
+
+One of the things that can make you want to go back to Windows.<br>
+This config location is specific to current Pop_OS version:
+```sh
+sudo nano /usr/share/wireplumber/main.lua.d/50-alsa-config.lua
+```
+- ["api.alsa.period-size"] = 128,
+- ["api.alsa.headroom"] = 1024,
+```sh
+systemctl restart --user pipewire.service
+```
+Go  here for more detailed reasonings, or other distros:
+[Audio Troubleshooting](https://forum.manjaro.org/t/howto-troubleshoot-crackling-in-pipewire/82442)
