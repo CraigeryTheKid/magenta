@@ -16,18 +16,14 @@ Install ufw (usually existing, but doesn't hurt)
 ```sh
 sudo apt install ufw
 ```
-Allow ssh connections, which use port 22
+Allow LAN traffic
 ```sh
-sudo ufw allow ssh && sudo ufw allow 22
+sudo ufw allow to 192.168.1.0/24 && \
+sudo ufw allow from 192.168.1.0/24
 ```
-Allow samba & syncthing connections, for home network
+Allow syncthing connections, if installed
 ```sh
-sudo ufw allow samba && sudo ufw allow syncthing
-```
-Allow remote desktop, which use 3389, for local LAN only<br>
-May need to change IP range to your local setup
-```sh
-sudo ufw allow from 192.168.88.0/24 to any port 3389
+sudo ufw allow syncthing
 ```
 Setup the global permissions
 ```sh
