@@ -36,10 +36,6 @@ For cleaning up old installs and leftover pieces, this combo command takes care 
 ```sh
 sudo apt autoclean && sudo apt --purge autoremove
 ```
-To clear "cache" folder from /home, items older than 6 months:
-```sh
-find ~/.cache/ -type f -atime +182 -delete
-```
 <br>
 
 ### Other customized setup:
@@ -51,7 +47,7 @@ cp /etc/xdg/autostart/io.elementary.appcenter-daemon.desktop ~/.config/autostart
 echo "X-GNOME-Autostart-enabled=false" >> ~/.config/autostart/io.elementary.appcenter-daemon.desktop
 ```
 
-### I enjoy making unnecessary scripts, like this do-all updater & cleaner:
+## I enjoy making unnecessary scripts, like this do-all updater & cleaner: ~~~~~~~~~~~~~~~~
 1. Make file
 ```sh
 sudo nano /usr/local/bin/bondate
@@ -61,8 +57,9 @@ sudo nano /usr/local/bin/bondate
 #!/bin/bash
 
 sudo apt update && sudo apt upgrade ; \
+sudo apt autoclean ; \
 flatpak update ; \
-sudo apt autoclean
+sudo needrestart
 ```
 3. make executable:
 ```sh
