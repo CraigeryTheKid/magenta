@@ -9,7 +9,9 @@ next: /posts/post-07
 
 **Remote Desktop** allows connecting to other computers, like a server, from another.<br>
 Media servers are great candidates for this.<br>
-Simpler servers, like Pi-hole and picframe, will use the more basic SSH terminal.<br><br>
+Simpler servers, like Pi-hole and picframe, will use the more basic SSH terminal.
+
+***AGAIN, this is ONLY if using Debian on the server!***<br>
 
 ## SERVER SIDE - Remote Desktop
 

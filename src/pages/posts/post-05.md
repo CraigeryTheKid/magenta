@@ -20,8 +20,8 @@ If you are making a new "folder" for sharing:<br>
 _first line makes "folder", and second line makes sure you have permissions_<br>
 _replace "username" with your login_
 ```sh
-sudo mkdir /home/folder &&
-sudo chown -R username /home/folder
+sudo mkdir /home/$user/folder &&
+sudo chown -R $user /home/$user/folder
 ```
 Finally, create login for connecting to the sharefolder:<br>
 _It will also prompt for password; Make different than your user if shared with others_
@@ -35,14 +35,13 @@ sudo nano /etc/samba/smb.conf
 ```
 1. Add this to [Network] section:
 ```sh
-workgroup = WORKGROUP
 allocation roundup size = 4096
 browseable = yes
 ```
 2. Add this to the very end:
 ```sh
 [FOLDER]
-path = /home/folder
+path = /home/$user/folder
 writeable = yes
 create mask = 0775
 directory mask = 0775
@@ -61,7 +60,7 @@ sudo apt install samba samba-common smbclient -y
 <br>Only recommended if host server is always online, like a NAS.
 
 ```sh
-sudo mkdir /home/username/folder &&
+sudo mkdir /home/$user/folder &&
 sudo apt install cifs-utils
 ```
 Open fstab, which controls mounting drives.<br>

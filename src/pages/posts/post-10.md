@@ -12,14 +12,14 @@ I use for the servers, but not the main desktop.<br><br>
 
 ## UFW FIREWALL
 
-Install ufw (usually existing, but doesn't hurt)
+Install ufw & its gui (usually existing, but doesn't hurt)
 ```sh
-sudo apt install ufw
+sudo apt install ufw && sudo apt install gufw 
 ```
 Allow LAN traffic
 ```sh
-sudo ufw allow to 192.168.1.0/24 && \
-sudo ufw allow from 192.168.1.0/24
+sudo ufw allow to 192.168.0.0/16 && \
+sudo ufw allow from 192.168.0.0/16
 ```
 Allow syncthing connections, if installed
 ```sh

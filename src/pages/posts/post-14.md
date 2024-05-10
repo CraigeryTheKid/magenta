@@ -104,7 +104,6 @@ systemctl status gpusettings.service
 
 ## So what happened?
 Nvidia really doesn't make it easy to change settings for basic overclocks<br>
-AMD cards will for sure be in the future.<br>
 A day was spent daisy-chaining searching until it came to an answer.
 
 Prints system info if you need to troubleshoot

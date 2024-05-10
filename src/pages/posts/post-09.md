@@ -20,7 +20,7 @@ sudo apt install needrestart
 ```sh
 sudo nano /etc/needrestart/needrestart.conf
 ```
-3. Delete "#" to enable, and change to automatic, change "i" to "a" in this line:<br>
+3. Delete "#" to enable, and change "i" to "a" in this line to make automatic:<br>
 _$nrconf{restart} = 'a';_
 
 <br>

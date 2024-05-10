@@ -11,7 +11,7 @@ next: /posts/post-12
 **Codium** is the opensource implementation, and nearly identically in every way.<br>
 This is used, as I type here, to build the website with local files, and push to Github<br><br>
 
-## VSCodium
+## install VSCodium
 
 add repo key
 ```sh
@@ -45,3 +45,29 @@ Setup git information
 git config --global user.email "name@mail.com" &&
 git config --global user.name "Name"
 ```
+<br>
+
+### open Codium
+- choose 'Clone repository'
+- give URL of your existing repo
+
+- Install Astro in CODIUM terminal
+```sh
+npm install astro
+```
+- check install and astro
+```sh
+npm run dev
+```
+<br>
+
+### make a change, and then connect to git to commit/sync:
+- log into git in browser
+- click "source control" tab in Codium sidebar
+- click "..." 3 dots in upper right of that sidebar
+- choose "remote > add remote"
+- select "add remote from github"
+- follow authentification steps
+- NAME the commit BEFORE clicking "commit"
+- select "always" regarding "no staged commit"
+- finally, click "sync" - and everything should be published

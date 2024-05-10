@@ -77,7 +77,6 @@ sudo nano /etc/samba/smb.conf
 Enter in top network section:
 ```sh
 [in network section]
-confirm WORKGROUP
 allocation roundup size = 4096
 ```	
 Add this, as-is, to bottom of doc:

@@ -10,7 +10,7 @@ next: /posts/post-05
 Thanks to **STEAM & WINE** gaming in Linux is getting quite easy.<br>
 These again could be installed "normal" with the Store, but I like command lines.
 
-## Install WINE (WINE Is Not an Emulator)
+## Install WINE ( = WINE Is Not an Emulator)
 
 enables 32-bit on system:
 ```sh
@@ -27,22 +27,16 @@ sudo wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-bui
 Next, need to add the repo MAKE SURE YOU GET CORRECT VERSION FOR YOUR OS!<br>
 [WINE HQ Download Page](https://wiki.winehq.org/Download) <br>
 
-1. For Ubuntu 22.04 (jammy) which is base of Pop!_OS 22.04:
+- For Ubuntu 22.04 (jammy) which is base of Pop!_OS 22.04:
 ```sh
 sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/jammy/winehq-jammy.sources
 ```
-2. For Debian 12 (bookworm) for server install:
-```sh
-sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/debian/dists/bookworm/winehq-bookworm.sources
-```
+
 Now update & install WINE!
 ```sh
 sudo apt update && sudo apt install --install-recommends winehq-stable
 ```
-Run wine command prompt (below) and then type " echo %temp% " to make sure temp folder exists.
-```sh
-wine cmd
-```
+
 Finally, change mode to Windows10 below: (Windows XP for debian server)
 ```sh
 winecfg
@@ -59,7 +53,7 @@ Install FlatPak:
 flatpak install flathub net.lutris.Lutris
 ```
 Settings to tweak if games have issue:
-- First, always use winetricks to make prefix per game!!
+- First, always use winetricks to make separate prefix per game!!
 - Wine Version (down to 8.9, etc.)
 - DXVK, other similar settings
 - Use winetricks to install vcrun2022, or others needed
@@ -67,7 +61,7 @@ Settings to tweak if games have issue:
 <br>
 
 
-## Install WINETRICKS
+## Install WINETRICKS ~~~~~~~~~~~~~~~~~
 Useful additional setup tool for WINE; can add missing dependencies.
 ```sh
 sudo apt install winetricks
@@ -75,6 +69,11 @@ sudo apt install winetricks
 ```sh
 sudo winetricks --self-update
 ```
+Use wine tricks to make wineprefix for each game!
+- Open winetricks, select 'new prefix'
+- Select 64-bit, and name it
+- new prefix is stored in: ~/.local/share/wineprefixes
+- Using lutrix, or installer, to point to that new directory
 <br>
 
 
@@ -83,12 +82,18 @@ Depending on video card, of course make sure drivers are installed!!<br><br>
 Add vulkan and other drivers that games need:
 ```sh
 sudo add-apt-repository ppa:graphics-drivers/ppa && 
-sudo apt update && sudo apt install -y libvulkan1 libvulkan1:i386
+sudo apt update
 ```
-If using AMD-based graphics:
+- For nvidia GPU systems:
+```sh
+sudo apt install -y libvulkan1 libvulkan1:i386
+```
+- If using AMD-based graphics (preferred for Linux!!):
 ```sh
 sudo apt install mesa-vulkan-drivers mesa-vulkan-drivers:i386
 ```
+<br>
+
 Add 10 second delay for "not responding" interlock (needed randomly in GNOME):
 ```sh
 gsettings set org.gnome.mutter check-alive-timeout 10000
@@ -110,8 +115,8 @@ RUN Steam once for it to update/login
 flatpak run com.valvesoftware.Steam
 ```
 
-INSIDE "Startup Apps" tool, NOT command line:<br>
-- Add with Startup Apps App:
+INSIDE "Startup Applications" tool, NOT command line:<br>
+- Add with 'Startup Apps' App:
 ```sh
 /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=/app/bin/steam --file-forwarding com.valvesoftware.Steam @@u -silent %U @@
 ```
@@ -123,7 +128,7 @@ INSIDE "Startup Apps" tool, NOT command line:<br>
 ```sh
 sudo apt install python3-pip python3-setuptools python3-venv pipx
 ```
-- Close terminal, and then re-open and run:
+- **Close terminal**, and then re-open and run:
 ```sh
 pipx install protontricks
 ```
@@ -131,7 +136,7 @@ pipx install protontricks
 ```sh
 pipx upgrade protontricks
 ```
-- Close terminal, and then re-open protontricks, which helps pick the game for you:
+- **Close terminal**, and then re-open protontricks, which helps pick the game for you:
 ```sh
 protontricks --gui
 ```

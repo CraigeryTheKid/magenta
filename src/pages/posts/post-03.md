@@ -27,32 +27,24 @@ sudo apt update && sudo apt upgrade -y
 ```
 <br>
 
-## What about removing / cleaning?
-For removing specific packages, I recommend Synaptic Application Manager, to make find exact names easier.
+## What about removing / cleaning? ~~~~~~~~~~~~~~~~~
+For removing specific packages, I recommend Synaptic Application Manager, to make searching apps easier.
 ```sh
 sudo apt install synaptic
 ```
 For cleaning up old installs and leftover pieces, this combo command takes care of it:
 ```sh
-sudo apt autoclean && sudo apt --purge autoremove
+sudo apt autoclean && sudo apt autoremove
 ```
 <br>
 
-### Other customized setup:
-
-For Pop!_OS, I like to manually update, so this disables the AppStore without uninstalling it:
-```sh
-mkdir -p ~/.config/autostart &&
-cp /etc/xdg/autostart/io.elementary.appcenter-daemon.desktop ~/.config/autostart/ &&
-echo "X-GNOME-Autostart-enabled=false" >> ~/.config/autostart/io.elementary.appcenter-daemon.desktop
-```
 
 ## I enjoy making unnecessary scripts, like this do-all updater & cleaner: ~~~~~~~~~~~~~~~~
 1. Make file
 ```sh
 sudo nano /usr/local/bin/bondate
 ```
-2. copy this:
+2. copy this into empty file:
 ```sh
 #!/bin/bash
 
@@ -61,7 +53,7 @@ sudo apt autoclean ; \
 flatpak update ; \
 sudo needrestart
 ```
-3. make executable:
+3. save file; then make executable:
 ```sh
 sudo chmod +x /usr/local/bin/bondate
 ```
@@ -82,5 +74,6 @@ sudo nano /usr/share/wireplumber/main.lua.d/50-alsa-config.lua
 ```sh
 systemctl restart --user pipewire.service
 ```
-Go  here for more detailed reasonings, or other distros:
-[Audio Troubleshooting](https://forum.manjaro.org/t/howto-troubleshoot-crackling-in-pipewire/82442)
+Go  here for more detailed reasonings, or for other distros:
+[Audio Troubleshooting](https://forum.manjaro.org/t/howto-troubleshoot-crackling-in-pipewire/82442) <br>
+This issue is NOT unique or specific to Pop!_OS

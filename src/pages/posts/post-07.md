@@ -10,7 +10,7 @@ next: /posts/post-08
 While **Remote Desktop** will already work on a running PC - what if it's sleeping?<br>
 We need to wake it up!<br><br>
 
-## SERVER SIDE - Wake On Lan
+## SERVER SIDE - Wake On Lan (any Distro)
 
 On the server side, "waking on LAN" is more about the hardware.<br>
 It must be enabled in the BIOS first, and then the OS just needs to enable/allow it.<br>
@@ -37,7 +37,8 @@ We need to flip to 'g' every boot.
 sudo --preserve-env systemctl edit --force --full wol-enable.service
 ```
 2. Copy this into the document.<br>
-After, hit "ctrl-x" to close, and hit "y" to save before closing.
+After, hit "ctrl-x" to close, and hit "y" to save before closing.<br>
+Remember again to change ethernet address to yours
 ```sh
 [Unit]
 Description=Enable Wake-up on LAN
@@ -49,11 +50,11 @@ ExecStart=/sbin/ethtool -s enp5s0 wol g
 [Install]
 WantedBy=basic.target
 ```
-Then, reload & enable the new service, that will run on boot!
+3. Then, reload & enable the new service, that will run on boot!
 ```sh
 sudo systemctl daemon-reload && sudo systemctl enable wol-enable.service
 ```
-For fun, re-run this, AFTER a reboot, to make sure Wake = 'g':
+4. For fun, re-run this, AFTER a reboot, to make sure Wake = 'g':
 ```sh
 sudo ethtool enp5s0
 ```
