@@ -45,8 +45,3 @@ Setup git information
 git config --global user.email "name@mail.com" &&
 git config --global user.name "Name"
 ```
-Install highlights for code formats<br>
-[highlight.sj](https://highlightjs.org/)
-```sh
-npm install highlight.js
-```
