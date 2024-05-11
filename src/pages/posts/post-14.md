@@ -40,7 +40,7 @@ needs_root_rights = yes
 ```
 - change file permissions
 ```sh
-chmod 2644 /etc/X11/Xwrapper.config
+sudo chmod 2644 /etc/X11/Xwrapper.config
 ```
 <br>
 
@@ -98,7 +98,7 @@ sudo systemctl daemon-reload && sudo systemctl enable gpusettings.service
 ```
 7. Make sure it worked with no errors; Reboot after for good measure.
 ```sh
-systemctl status gpusettings.service
+sudo systemctl status gpusettings.service
 ```
 <br>
 

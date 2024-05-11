@@ -58,7 +58,7 @@ sudo systemctl daemon-reload && systemctl enable nogpp.service
 ```
 7. Make sure it's running:
 ```sh
-systemctl status nogpp.service
+sudo systemctl status nogpp.service
 ```
 8. Make sure the two "GPP" devices are disabled in list:
 ```sh
