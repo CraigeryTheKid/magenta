@@ -39,7 +39,7 @@ sudo apt autoclean && sudo apt autoremove
 <br>
 
 
-## I enjoy making unnecessary scripts, like this do-all updater & cleaner: ~~~~~~~~~~~~~~~~
+## I enjoy making scripts, like this updater & cleaner: ~~~~~~~
 1. Make file
 ```sh
 sudo nano /usr/local/bin/bondate
@@ -48,17 +48,24 @@ sudo nano /usr/local/bin/bondate
 ```sh
 #!/bin/bash
 
-sudo apt update && sudo apt upgrade ; \
-sudo apt autoclean ; \
+sudo apt update && sudo apt upgrade -y ; \
+sudo apt autoclean -y ; \
+sudo apt autoremove -y ; \
 flatpak update ; \
-sudo needrestart
+sudo needrestart ; \
+echo Also, ; \
+echo Consider: sudo rclone selfupdate ; \
+echo Consider: winetricks --self-update
 ```
 3. save file; then make executable:
 ```sh
 sudo chmod +x /usr/local/bin/bondate
 ```
-4. and now 'bondate' in any terminal runs all the updates!
-    - you will still have the chance to say "no" to installs
+4. and now entering 'bondate' in any terminal runs all the updates!
+    - also runs 'cleaners' that remove obsolete files
+    - also updates flatpak
+    - 'need restart' tells you if you should reboot - this is installed later in guide!
+    - comments to remind me to occasionally update other 3rd party apps
 
 <br>
 

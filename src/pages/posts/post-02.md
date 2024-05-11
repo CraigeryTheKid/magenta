@@ -13,12 +13,12 @@ next: /posts/post-03
 - [Linux Mint](https://www.linuxmint.com/download.php)
 2. Use balena etcher or popsicle, (others)... to make bootable USB.
 3. Put it in the new computer.
-4. Boot to it!
+4. Boot to it! From the BIOS.
 
 ## Install Setup and Partitions
 Follow wizard steps basically... option to choose custom partitions if you want.
 
-1. partition1 - /boot/efi - fat32 - 2gb - format
+1. partition1 - /boot/efi - fat32 - 2gb - format (this is the boot table; required!)
 2. partition2 - 'swap' - swap - 2gb     (Don't need big with 32gb ram)
 3. partition3 - / (root) - ext4 - [rest of disk] - format
 4. Can split /home partition separately, but I stopped doing that
