@@ -29,7 +29,7 @@ sudo apt update && sudo apt install syncthing
 ```
 - Make auto-start with system
 ```sh
-sudo cp /usr/share/applications/syncthing-start.desktop to ~/.config/autostart/syncthing-start.desktop
+sudo cp /usr/share/applications/syncthing-start.desktop ~/.config/autostart/syncthing-start.desktop
 ```
 - add to firewall allow list
 ```sh

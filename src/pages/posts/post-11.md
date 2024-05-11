@@ -32,7 +32,7 @@ also need to install latest nvm & nodejs
 ```sh
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 ```
-install node
+CLOSE & RE-OPEN TERMINAL, and install node:
 ```sh
 nvm install node
 ```

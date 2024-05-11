@@ -79,12 +79,16 @@ rclone selfupdate
 rclone config
 ```
 4. After running config, which sets names, can turn command into a script:<br>
-make sure to update "SRC" and "DEST" with your actual folder names
+- Open new shell:
+```sh
+sudo nano /usr/local/bin/rcbono
+```
+- make sure to update "SRC" and "DEST" with your actual folder names
 ```sh
 #!/bin/sh
 
-SRC=/home/username/localfolder
-DEST=proton:cloudfolder
+SRC=/home/daddio/zBonoBacks
+DEST=proton:zBonoProton
 
 rclone --retries 2 \
        --fast-list \
@@ -96,4 +100,8 @@ rclone --retries 2 \
        --exclude '.*{/**,}' \
        -P \
        sync ${SRC} ${DEST}
+```
+- change permissions on both new script:
+```sh
+sudo chmod +x /usr/local/bin/rcbono
 ```
