@@ -84,3 +84,17 @@ systemctl restart --user pipewire.service
 Go  here for more detailed reasonings, or for other distros:
 [Audio Troubleshooting](https://forum.manjaro.org/t/howto-troubleshoot-crackling-in-pipewire/82442) <br>
 This issue is NOT unique or specific to Pop!_OS
+
+<br>
+
+## Remove repository: ~~~~~~~~~~~~~~~~~~~
+
+There's several ways, but just deleting a file seems easy:
+```sh
+ls -l /etc/apt/sources.list.d/
+```
+then, if there's something to remove:<br>
+To type file name, type a few letters until unique, and hit [tab]
+```sh
+sudo rm [filename]
+```

@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/MDLayout.astro
 
-title: 15 Syncthing | Jackett | 7zip | PDF
+title: 15 Syncthing | Jackett | 7zip | caffeine | PDF
 prev: /posts/post-14
 next: /posts/post-16
 ---
@@ -72,6 +72,19 @@ sudo apt install p7zip-full p7zip-rar
 to unzip with directories:
 ```sh
 7z x filename
+```
+
+<br>
+
+## install Caffeine: ~~~~~~~~~~~~~~~~~~~
+
+Caffeine is used to PREVENT sleep! (after all the working getting sleep!)
+```sh
+sudo apt install caffeine
+```
+and then in the startup-apps app, add:
+```sh
+/usr/bin/caffeine-indicator
 ```
 
 <br>
