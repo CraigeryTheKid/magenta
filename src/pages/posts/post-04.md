@@ -99,8 +99,18 @@ Add 10 second delay for "not responding" interlock (needed randomly in GNOME):
 gsettings set org.gnome.mutter check-alive-timeout 10000
 ```
 Remove unwanted shortcuts that WINE adds to Launcher:
+1. Make file
 ```sh
-rm -f ~/.config/menus/applications-merged/wine* && rm -rf ~/.local/share/applications/wine
+sudo nano /usr/local/bin/nowhine
+```
+2. enter script
+```sh
+rm -f ~/.config/menus/applications-merged/wine* && \
+rm -rf ~/.local/share/applications/wine
+```
+3. Make executable
+```sh
+sudo chmod +x /usr/local/bin/nowhine
 ```
 <br>
 
