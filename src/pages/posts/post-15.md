@@ -27,9 +27,10 @@ echo "deb [signed-by=/etc/apt/keyrings/syncthing-archive-keyring.gpg] https://ap
 ```sh
 sudo apt update && sudo apt install syncthing
 ```
-- Make auto-start with system
+- Make auto-start with system (replace myuser with username)
 ```sh
-sudo cp /usr/share/applications/syncthing-start.desktop ~/.config/autostart/syncthing-start.desktop
+systemctl enable syncthing@myuser.service
+systemctl start syncthing@myuser.service
 ```
 - add to firewall allow list
 ```sh
