@@ -55,23 +55,10 @@ Install packages from standard apt source:
 sudo apt update &&
 sudo apt install samba samba-common smbclient -y
 ```
+View server-shares using address bar <br>
+- Direct IP address in Windows
+- "smb://ip.ad.re.ss" in Linux
 
-**If you want to permanently mount sharefolder**
-<br>Only recommended if host server is always online, like a NAS.
-
-```sh
-sudo mkdir /home/$user/folder &&
-sudo apt install cifs-utils
-```
-Open fstab, which controls mounting drives.<br>
-BE CAREFUL WITH EXISTING CONTENT! Can break OS!
-```sh
-sudo nano /etc/fstab
-```
-1. Add to bottom of fstab document:
-```sh
-//SERVER/share /home/username/folder cifs uid=username,username=guestname,password=smbpassword 0 0
-```
 
 <br>
 

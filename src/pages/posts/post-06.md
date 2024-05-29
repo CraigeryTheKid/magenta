@@ -15,38 +15,13 @@ Simpler servers, like Pi-hole and picframe, will use the more basic SSH terminal
 
 ## SERVER SIDE - Remote Desktop
 
-IF server uses Debian, we need to install some packages.<br>
-Pop!_OS has this installed already, but they aren't as optimized for [headless] server life.<br>
+Pop!_OS has this installed already, but needs a little config<br>
 
-Install the XFCE desktop environment:
-```sh
-sudo apt install -y xfce4 xfce4-goodies	
-```
-Install 'xrdp' which is the remote desktop program itself:
-```sh
-sudo apt install xrdp -y
-```
-Check to make sure xrdp is enabled & running:
-```sh
-sudo systemctl status xrdp
-```
-**Further testing needed, but maybe only one of these is needed?**
-1. Add ssl-cert for xrdp (try just this one first)
-```sh
-sudo adduser xrdp ssl-cert 
-```
-2. Add session instruction to a file (if desktop won't load)
-```sh
-echo "xfce4-session" | tee .xsession
-```
-After one (or both), restart xrdp:
-```sh
-sudo systemctl restart xrdp
-```
-Some guides call out other packages you need, but they might be included in dependencies?
-```sh
-sudo apt install xorg dbus-x11 x11-xserver-utils xorgxrdp
-```
+- Enable sharing
+- Allow access
+- Set password
+- Disable lockscreen
+
 <br>
 
 ## CLIENT SIDE - Local computer

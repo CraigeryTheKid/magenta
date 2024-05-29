@@ -49,13 +49,15 @@ sudo nano /usr/local/bin/bondate
 #!/bin/bash
 
 sudo apt update && sudo apt upgrade -y ; \
+sudo apt --purge autoremove -y ; \
+sudo apt-get check ; \
 sudo apt autoclean -y ; \
-sudo apt autoremove -y ; \
+sudo apt clean ; \
 flatpak update ; \
 sudo needrestart ; \
 echo Also, ; \
 echo Consider: sudo rclone selfupdate ; \
-echo Consider: winetricks --self-update
+echo Consider: sudo winetricks --self-update
 ```
 3. save file; then make executable:
 ```sh

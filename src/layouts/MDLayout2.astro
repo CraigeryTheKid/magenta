@@ -1,0 +1,63 @@
+---
+// secondary layout for the blog/instruction posts; does a lot
+// first adds baselayout, then imports "fenced code copy button" layout/function
+// then most of code is the tags & tag links, of which I'm not sure I need/want
+
+import BaseLayout from './BaseLayout.astro';
+const { frontmatter } = Astro.props;
+
+import CopyLayout from './CopyLayout.astro';
+
+---
+
+<style>
+    a {
+      color: #00539F;
+      padding: .5em 1em;
+      text-decoration: none;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      padding-left: 2em;
+    }
+    .tag {
+      margin: .5em;
+      border: solid 1px #a1a1a1;
+      border-radius: .5em;
+      padding: .5em .01em;
+      font-size: 1.15em;
+      background-color: #F8FCFD;
+    }
+    .tag:hover{
+      background-color: pink;
+    }
+</style>
+
+<BaseLayout pageTitle={frontmatter.title}>
+
+<div class="tags">
+  <p class="tag"><a href="/blog2/">Table of Contents</a></p>
+  <p class="tag"><a href={frontmatter.prev}>Previous Page</a></p>
+  <p class="tag"><a href={frontmatter.next}>Next Page</a></p>
+</div>
+
+<br>
+
+<CopyLayout>
+<slot />
+</CopyLayout>
+
+<br>
+<div class="tags">
+  <p class="tag"><a href="/blog/">Table of Contents</a></p>
+  <p class="tag"><a href={frontmatter.prev}>Previous Page</a></p>
+  <p class="tag"><a href={frontmatter.next}>Next Page</a></p>
+</div>
+
+
+</BaseLayout>
+
+
+
+  

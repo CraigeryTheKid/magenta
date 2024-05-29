@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/MDLayout.astro
 
-title: 15 Syncthing | Jackett | 7zip | caffeine | PDF
+title: 15 Syncthing | 7zip | caffeine | PDF
 prev: /posts/post-14
 next: /posts/post-16
 ---
@@ -32,37 +32,10 @@ sudo apt update && sudo apt install syncthing
 systemctl enable syncthing@myuser.service
 systemctl start syncthing@myuser.service
 ```
-- add to firewall allow list
-```sh
-sudo ufw allow syncthing
-```
+
 
 <br>
 
-## Jackett
-
-- Download with lengthy, "I guess I trust it", command line:
-```sh
-cd /opt && f=Jackett.Binaries.LinuxAMDx64.tar.gz && \
-release=$(wget -q https://github.com/Jackett/Jackett/releases/latest -O - | grep "title>Release" | cut -d " " -f 4) && \
-sudo wget -Nc https://github.com/Jackett/Jackett/releases/download/$release/"$f" && sudo tar -xzf "$f" && sudo rm -f "$f"
-```
-- Had weird error? So I inserted this ownership:
-```sh
-sudo chown -R [user] /opt/Jackett*
-```
-- Run installer and checker:
-```sh
-cd /opt/Jackett* && sudo ./install_service_systemd.sh && systemctl status jackett.service && \
-cd - && echo -e "\nVisit http://127.0.0.1:9117"
-```
-- Install plugin in qbittorrent
-- enter API key (from http://127.0.0.1:9117) into this file:
-```sh
-nano ~/.var/app/org.qbittorrent.qBittorrent/data/qBittorrent/nova3/engines/jackett.json
-```
-
-<br>
 
 ## 7zip
 

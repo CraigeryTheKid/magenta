@@ -1,0 +1,38 @@
+---
+// blog main page - links to all posts
+// neat little code to pull all existing pages and make into bullet list of links
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const allPosts = await Astro.glob('../pages/posts2/*.md');
+const pageTitle = "My Server Setup - Headless Debian";
+---
+
+<style>
+    a {
+      padding: 0em .3em;
+      text-decoration: none;
+      font-size: 1.5em;
+ 	  border: solid 1px #a1a1a1;
+      border-radius: .5em;
+    }
+
+	a:hover, a:focus {
+    background-color: #ff9776;
+  	}
+
+</style>
+
+<BaseLayout pageTitle={pageTitle}>
+
+	<h3>This is where I will post about setting up my Debian Server <br>
+	Each post will be a set of instructions or guides per task.</h3>
+	
+	<ul>
+	{allPosts.map((post) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
+	</ul>
+
+	<br><br><br>
+	<p>PC Setup SOP started on Nov 25th, 2023</p>
+
+</BaseLayout>
