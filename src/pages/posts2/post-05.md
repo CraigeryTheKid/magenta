@@ -103,15 +103,15 @@ snapshots:
     default: 30
 
 cameras:
-  dummy_camera: #must name them
+  dummy_camera:
     enabled: False
     ffmpeg:
       inputs:
-        - path: rtsp://admin:***@192.168.88.***:554/cam/realmonitor?channel=1&subtype=0&unicast=true
+        - path: rtsp://admin:***@192.168.88.***:554/cam/realmonitor?channel=1&subtype=0&unicast=true&proto=Onvif
           roles:
-            - record # main stream, higher quality
-        - path: rtsp://admin:***@192.168.88.***:554/cam/realmonitor?channel=1&subtype=1&unicast=true
+            - record
+        - path: rtsp://admin:***@192.168.88.***:554/cam/realmonitor?channel=1&subtype=1&unicast=true&proto=Onvif
           roles:
-            - detect # sub stream, lower quality, faster processing
+            - detect
 ```
 
