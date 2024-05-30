@@ -32,8 +32,8 @@ echo list done
 sudo nano /etc/exports
 ```
 ```sh
-/mnt/Bonashare	   192.168.88.0/24(rw,sync,no_subtree_check)
-/home/jedi	   192.168.88.0/24(rw,sync,no_subtree_check)
+/mnt/Bonashare      192.168.88.0/24(rw,sync,no_subtree_check)
+/home/jedi          192.168.88.0/24(rw,sync,no_subtree_check)
 ```
 - Update & restart NFS
 ```sh
@@ -52,17 +52,24 @@ sudo apt install nfs-common
 - Create directory to 'link' to server share
 ```sh
 sudo mkdir /mnt/Bonashare
+sudo mkdir /mnt/jedihome
 ```
--  CAREFULLY edit the fstab file
+-  CAREFULLY edit the fstab file - ONLY for 24/7 server drives
 ```sh
 sudo nano /etc/fstab
 ```
 ```sh
 192.168.88.234:/mnt/Bonashare	/mnt/Bonashare nfs defaults 0 0
+192.168.88.234:/home/jedi	    /mnt/jedihome nfs defaults 0 0
 ```
-- I also, as the master, am connecting to all the /home directories
+- For temporary mounts, I also can connect to all other /home directories
 ```sh
-192.168.88.234:/home/jedi	/mnt/jedihome nfs defaults 0 0
-192.168.88.111:/home/brolliant	/mnt/brollihome nfs defaults 0 0
-192.168.88.206:/home/spencer	/mnt/spencihome nfs defaults 0 0
+sudo mkdir /mnt/brollihome
+sudo mkdir /mnt/spencihome
+```
+```sh
+sudo mount -t nfs 192.168.88.111:/home/brolliant /mnt/brollihome
+```
+```sh
+sudo mount -t nfs 192.168.88.206:/home/spencer /mnt/spencihome
 ```
