@@ -50,7 +50,6 @@ sudo nano /usr/local/bin/bondate
 
 sudo apt update && sudo apt upgrade -y ; \
 sudo apt --purge autoremove -y ; \
-sudo apt-get check ; \
 sudo apt autoclean -y ; \
 sudo apt clean ; \
 flatpak update ; \
