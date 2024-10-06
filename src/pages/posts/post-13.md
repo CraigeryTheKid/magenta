@@ -93,3 +93,19 @@ Finally, add share password to user. Can be different than login for security.
 sudo smbpasswd -a dietpi
 ```
 ## Address of share: \\\dietpi\BonoDrive
+
+
+<br><br>
+
+## Basic PiFrame Commands
+The long version instructions are links, but here's quick locations & commands.
+```sh
+sudo systemctl stop picframe.service
+```
+```sh
+sudo systemctl start picframe.service
+```
+```sh
+sudo systemctl restart picframe.service
+```
+Also, database file is in /pi/data which needs deleted when pictures are added.
