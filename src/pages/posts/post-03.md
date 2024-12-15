@@ -25,22 +25,37 @@ You can combine commands! The `-y` automatically answers "yes" to the prompt.
 ```sh
 sudo apt update && sudo apt upgrade -y
 ```
-<br>
-
-## What about removing / cleaning? ~~~~~~~~~~~~~~~~~
-For removing specific packages, I recommend Synaptic Application Manager, to make searching apps easier.
-```sh
-sudo apt install synaptic
-```
 For cleaning up old installs and leftover pieces, this combo command takes care of it:
 ```sh
 sudo apt autoclean && sudo apt autoremove
 ```
+
+For removing specific packages, use Synaptic Application Manager, to make searching easier.
+```sh
+sudo apt install synaptic
+```
+
 <br>
 
 
+## NEEDRESTART
+needrestart is a neat little tool that automatically reloads running packages after an update.<br>
+
+1. install package
+```sh
+sudo apt install needrestart
+```
+2. open config file for settings:
+```sh
+sudo nano /etc/needrestart/needrestart.conf
+```
+3. Delete "#" to enable, and change "i" to "a" in this line to make automatic:<br>
+_$nrconf{restart} = 'a';_
+
+<br>
+
 ## I enjoy making scripts, like this updater & cleaner: ~~~~~~~
-1. Make file
+1. Make new file
 ```sh
 sudo nano /usr/local/bin/bondate
 ```
@@ -54,7 +69,7 @@ sudo apt autoclean -y ; \
 sudo apt clean ; \
 flatpak update ; \
 sudo needrestart ; \
-echo Also, ; \
+echo also: ; \
 echo Consider: sudo rclone selfupdate ; \
 echo Consider: sudo winetricks --self-update
 ```
@@ -62,11 +77,8 @@ echo Consider: sudo winetricks --self-update
 ```sh
 sudo chmod +x /usr/local/bin/bondate
 ```
-4. and now entering 'bondate' in any terminal runs all the updates!
-    - also runs 'cleaners' that remove obsolete files
-    - also updates flatpak
-    - 'need restart' tells you if you should reboot - this is installed later in guide!
-    - comments to remind me to occasionally update other 3rd party apps
+4. and now entering 'bondate' in any terminal runs all the updates and cleaners!
+
 
 <br>
 

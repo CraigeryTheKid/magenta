@@ -7,8 +7,8 @@ next: /posts/post-05
 ---
 
 
-Thanks to **STEAM & WINE** gaming in Linux is getting quite easy.<br>
-These again could be installed "normal" with the Store, but I like command lines.
+Thanks to **STEAM & WINE,** gaming in Linux is getting quite easy.
+<br><br>
 
 ## Install WINE ( = WINE Is Not an Emulator)
 
@@ -44,24 +44,7 @@ winecfg
 <br>
 
 
-## Install Lutris (Linux game launcher & WINE assistant)
-Lutris can install games for you, using their database!<br>
-Or, you can point it to manually installed games, and it will add to launcher.
-
-Install FlatPak:
-```sh
-flatpak install flathub net.lutris.Lutris
-```
-Settings to tweak if games have issue:
-- First, always use winetricks to make separate prefix per game!!
-- Wine Version (down to 8.9, etc.)
-- DXVK, other similar settings
-- Use winetricks to install vcrun2022, or others needed
-
-<br>
-
-
-## Install WINETRICKS ~~~~~~~~~~~~~~~~~
+## Install WINETRICKS 
 Useful additional setup tool for WINE; can add missing dependencies.
 ```sh
 sudo apt install winetricks
@@ -73,11 +56,12 @@ Use wine tricks to make wineprefix for each game!
 - Open winetricks, select 'new prefix'
 - Select 64-bit, and name it
 - new prefix is stored in: ~/.local/share/wineprefixes
-- Using lutrix, or installer, to point to that new directory
+- Using lutrix, or installers, from that new prefix (pfx)
+<br>
 <br>
 
 
-## Additional tips & Tricks
+## Additional Game Packages
 Depending on video card, of course make sure drivers are installed!!<br><br>
 Add vulkan and other drivers that games need:
 ```sh
@@ -98,6 +82,8 @@ Add 10 second delay for "not responding" interlock (needed randomly in GNOME):
 ```sh
 gsettings set org.gnome.mutter check-alive-timeout 10000
 ```
+<br>
+
 Remove unwanted shortcuts that WINE adds to Launcher:
 1. Make file
 ```sh
@@ -114,9 +100,38 @@ sudo chmod +x /usr/local/bin/nowhine
 ```
 <br>
 
-## Auto-start Steam (Flatpak) ~~~~~~~~~~~~~~~~~~<br>
 
-Install Steam from Flatpak:
+# FLATPAKS
+<br>
+
+## Install Lutris (Linux game launcher & WINE assistant)
+Lutris can install games for you, using their database!<br>
+Or, you can point it to manually installed games, and it will add to launcher.
+
+```sh
+flatpak install flathub net.lutris.Lutris
+```
+Settings to tweak if games have issue:
+- First, always use winetricks to make separate prefix per game!!
+- Wine Runner Version (using ProtonUp QT)
+- dxvk version (down 2.2, etc)
+- Use winetricks to install vcrun2022, or others windows things needed
+
+<br>
+
+## ProtonUp QT: Add wine runners to get games to work:
+
+```sh
+flatpak install flathub net.davidotek.pupgui2
+```
+- pick Lutris or Steam, works on both!
+- pick group: proton, wine, proton tkg, etc
+- install latest versions and try them (in Lutris/Steam) when getting games to work
+
+<br>
+
+## Steam & autostart
+
 ```sh
 flatpak install flathub com.valvesoftware.Steam
 ```
@@ -125,33 +140,23 @@ RUN Steam once for it to update/login
 flatpak run com.valvesoftware.Steam
 ```
 
-INSIDE "Startup Applications" tool, NOT command line:<br>
-- Add with 'Startup Apps' App:
+If you want autostart:<br>
+- Add with 'Startup Apps' App (NOT COMMAND LINE):
 ```sh
 /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=/app/bin/steam --file-forwarding com.valvesoftware.Steam @@u -silent %U @@
 ```
 <br>
 
-### Protontricks: Add dll to Steam to get Bepinex to work:
+## Protontricks: Add dll to Steam to get Bepinex to work:
 
-- Install protonticks:
 ```sh
-sudo apt install python3-pip python3-setuptools python3-venv pipx
+flatpak install flathub com.github.Matoking.protontricks
 ```
-- **Close terminal**, and then re-open and run:
-```sh
-pipx install protontricks
-```
-- to upgrade:
-```sh
-pipx upgrade protontricks
-```
-- **Close terminal**, and then re-open protontricks, which helps pick the game for you:
+- then re-open protontricks, which helps pick the game for you:
 ```sh
 protontricks --gui
 ```
-- pick game
-- default prefix
+- pick game, & default prefix
 - run winecfg
 - go to libraries
 - add "winhttp", for example, to load custom dll
@@ -159,9 +164,8 @@ protontricks --gui
 
 <br>
 
-## Another Flatpak Install: FFXIVLauncher ~~~~~~~~~~<br>
+## Another Flatpak Install: FFXIVLauncher 
 
-Install from Flatpak:
 ```sh
 flatpak install flathub dev.goats.xivlauncher
 ```
@@ -172,4 +176,14 @@ flatpak run dev.goats.xivlauncher
 - Make sure to select Full vs Trial version<br>
 - Disable AddOns if desired (not technically supported by SquareEnix)
 
+<br>
+
+# Extra Stuff
+
+## Install Input Remapper
+This little tool remaps my extra mouse buttons<br>
+Now my thumb controls the shift & ctrl mod keys!<br>
+[git page for deb file](https://github.com/sezanzeb/input-remapper/releases)
+
+- Install using Eddy or other .deb installer
 
