@@ -7,16 +7,20 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "generate-types": "wrangler types"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^14.1.7",
     "@astrojs/preact": "^6.0.2",
     "@astrojs/rss": "^4.0.19",
     "astro": "^7.1.6",
     "highlight.js": "^11.9.0",
-    "preact": "^10.19.2"
+    "preact": "^10.19.2",
+    "wrangler": "^4.115.0"
   },
   "allowScripts": {
-    "esbuild@0.28.1": true
+    "esbuild@0.28.1": true,
+    "workerd@1.20260722.1": true
   }
 }
