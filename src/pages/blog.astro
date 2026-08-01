@@ -1,11 +1,8 @@
 ---
 // blog main page - links to all posts
-// neat little code to pull all existing pages and make into bullet list of links
 
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const allPosts = await Astro.glob('../pages/posts/*.md');
-const pageTitle = "My PC Setup - GNU/Linux Edition";
 ---
 
 <style>
@@ -15,22 +12,37 @@ const pageTitle = "My PC Setup - GNU/Linux Edition";
       font-size: 1.5em;
  	  border: solid 1px #a1a1a1;
       border-radius: .5em;
-    }
-
+      }
 	a:hover, a:focus {
-    background-color: #ff9776;
-  	}
-
+      background-color: #ff9776;
+  	  }
 </style>
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle="My PC Setup - Ubuntu Linux Edition">
 
-	<h3>This is where I will post about my journey learning GNU/Linux. <br>
-	Each post will be a set of instructions or guides per task.</h3>
+	<h3>
+	This is where I will post about my journey learning GNU/Linux. <br>
+	Each post will be a set of instructions or guides per task.
+    </h3>
 	
 	<ul>
-	{allPosts.map((post) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
-	</ul>
+    <li><a href=/posts/post-01>01 Leaving Windows</a></li>
+    <li><a href=/posts/post-02>02 Full Disk Install</a></li>
+    <li><a href=/posts/post-03>03 First Boot & Basic Settings</a></li>
+    <li><a href=/posts/post-04>04 Install Gaming Packages</a></li>
+    <li><a href=/posts/post-05>05 Network Share Folders</a></li>
+    <li><a href=/posts/post-06>06 Remote Desktop</a></li>
+    <li><a href=/posts/post-07>07 Wake on LAN</a></li>
+    <li><a href=/posts/post-08>08 Gigabyte 550 sleep issue</a></li>
+    <li><a href=/posts/post-09>09 Auto-updates and Cloud Backups</a></li>
+    <li><a href=/posts/post-10>10 Firewall Settings</a></li>
+    <li><a href=/posts/post-11>11 VSCodium for web design</a></li>
+    <li><a href=/posts/post-12>12 Raspberry pi-hole and Mikrotik Router</a></li>
+    <li><a href=/posts/post-13>13 Raspberry pi as simple home NAS</a></li>
+    <li><a href=/posts/post-14>14 Nvidia undervolting & Display guide</a></li>
+    <li><a href=/posts/post-15>15 Syncthing | 7-zip | caffeine | PDF</a></li>
+	<li><a href=/posts/post-16>16 Local VPN Server - Mikrotik</a></li>
+    </ul>
 
 	<br><br><br>
 	<p>PC Setup SOP started on Nov 25th, 2023</p>
