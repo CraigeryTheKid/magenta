@@ -1,25 +1,13 @@
 ---
-// no special code here, except for turning list of values into bullet list
+// not linked anywhere, filler page
 
 import BaseLayout from '../layouts/BaseLayout.astro';
-
-const pageTitle = "About Me";
-
-const skills = ["Copy-paste web coding", "Excel spreadsheets", "switching to Linux", "Changing Spark Plugs", "cutting hair for 5 of 6 family members",
-				"amazing spreadsheets", "building PCs", "home networking", "trimming trees", "spectacular spreadsheets"];
 
 ---
 
 
-<style>
-	.skill {
-	  font-weight: bold;
-	  text-transform: uppercase;
-		}
-</style>
 
-
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle="About Me">
 	
 	
         <h2>...decided to make a website... for reasons.</h2>
@@ -33,16 +21,12 @@ const skills = ["Copy-paste web coding", "Excel spreadsheets", "switching to Lin
   			<li>My hobbies are: couch sitting, gaming, and having so many kids</li>
 		</ul>
 		
-		<h3>My random list of skills are:</h3>
-			<ul>
-  			{skills.map((skill) => <li class="skill">{skill}</li>)}
-			</ul>
 
 		<br>
 		<p><em><b>I finished this Astro tutorial! <br>
 			This is the guide I followed for the basic structure:
-			<a href= https://docs.astro.build/en/tutorial/0-introduction/ > Build your first Astro Blog </a>
-			<br>And then I made it my site.
+			<a href= https://docs.astro.build/en/tutorial/0-introduction/ > Build your first Astro Blog </a><br>
+			And then I made it my site.
 			</em></b>
 		</p>
 		
